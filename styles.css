@@ -17,7 +17,7 @@ header {
     background-color: #267a50; /* Verde claro */
     padding: 0;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     background-image: url(img/portada.webp);
     background-position: center;
     background-size: cover;
@@ -95,7 +95,37 @@ footer {
 #inicio p {
     font-size: 1.2em;
     margin: 20px 0;
+    text-align: justify;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+table td {
+    flex: 1 1 100%; /* Ajusta cada celda para que ocupe toda la fila en dispositivos pequeños */
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+table td h3 {
+color: #1a8c3a;
+font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    table td {
+        flex: 1 1 33.33%; /* En pantallas más anchas, cada celda ocupará un tercio de la fila */
+    }
+}
+
 
 .beneficios {
     display: flex;
@@ -126,46 +156,84 @@ footer {
     text-align: justify;
 }
 
-/* Estilos de la sección "Sobre Nosotros" */
-#sobre-nosotros {
-    background-color: #267a50;
-    padding: 50px;
-    text-align: justify;
-    color: #ffffff;
+/* Contenedor principal */
+#sobre-nosotros .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
 }
 
+/* Estilos para los encabezados */
 #sobre-nosotros h2 {
-    font-size: 2.5em;
-}
-
-.sobre-nosotros-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-}
-
-.sobre-nosotros-texto {
-    flex: 1;
-    text-align: left;
-    max-width: 600px;
-}
-
-.sobre-nosotros-texto p {
-    font-size: 1.2em;
+    font-size: 2em;
+    color: #2c3e50;
+    text-align: center;
     margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#sobre-nosotros p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
     text-align: justify;
 }
 
-.sobre-nosotros-texto p:last-child {
-    margin-bottom: 0;
+/* Resaltado de texto importante */
+#sobre-nosotros strong {
+    color: #2c3e50;
 }
 
-.sobre-nosotros-content img {
+/* Video */
+.video-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.video-container iframe {
     width: 100%;
-    max-width: 400px;
-    margin-top: 20px;
+    height: 450px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sobre-nosotros h2 {
+        font-size: 1.5em;
+    }
+
+    #sobre-nosotros p {
+        font-size: 1em;
+    }
+
+    .video-container iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    #sobre-nosotros h2 {
+        font-size: 1.3em;
+    }
+
+    #sobre-nosotros p {
+        font-size: 0.95em;
+    }
+
+    .video-container iframe {
+        height: 250px;
+    }
 }
 
 /* Estilos de la sección "Servicios" */
@@ -213,6 +281,70 @@ footer {
     margin-bottom: 20px;
     color: #555;
 }
+
+/* Media query para pantallas pequeñas (como en móviles) */
+@media (max-width: 768px) {
+    .servicios-grid {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .servicio {
+        flex: 1 1 100%; /* Asegura que cada servicio ocupe toda la línea */
+        margin-bottom: 30px; /* Espacio entre los servicios */
+    }
+}
+
+#ventajas {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#ventajas h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.ventajas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.ventaja {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.ventaja img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.ventaja h3 {
+    font-size: 1.5rem;
+    color: #007b5e;
+    margin-bottom: 10px;
+}
+
+.ventaja p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.ventaja:hover {
+    transform: translateY(-10px);
+}
+
 
 /* Estilos para cada ítem de pregunta y respuesta */
 .faq-item {
@@ -278,11 +410,15 @@ footer {
 
 /* Estilo personalizado para el botón de Mercado Pago */
 .mercadopago-button {
-    background-color: #00a680 !important; /* Cambiar el color de fondo */
+    background-color: #e53935 !important; /* Cambiar el color de fondo */
     color: white !important; /* Cambiar el color del texto */
     border-radius: 5px !important; /* Redondear bordes */
     padding: 5px 5px !important; /* Cambiar el tamaño */
     font-size: 16px !important; /* Cambiar el tamaño de la fuente */
+}
+
+.mercadopago-button:hover {
+    background-color: #dd1515 !important; /* Rojo más oscuro cuando el ratón pasa por encima */
 }
 
 .contact {
