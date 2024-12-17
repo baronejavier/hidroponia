@@ -452,3 +452,86 @@ font-size: 1.5rem;
 .contact button:hover {
     background: #004d40;
 }
+
+.social-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-social img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.btn-social.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.btn-social.facebook {
+    background: #4267B2;
+}
+
+.btn-social.tiktok {
+    background: #010101; /* Colores oficiales */
+    color: #fff; /* Texto en blanco para contraste */
+}
+
+.btn-social:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#socio-comercial {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  #socio-comercial .container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  #socio-comercial h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  #socio-comercial p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+  }
+  
+  .btn-socio {
+    background-color: #25d366; /* Color verde característico de WhatsApp */
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-socio:hover {
+    background-color: #128c7e; /* Color más oscuro de WhatsApp */
+  }
+  
