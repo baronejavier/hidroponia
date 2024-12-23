@@ -535,3 +535,26 @@ font-size: 1.5rem;
     background-color: #128c7e; /* Color más oscuro de WhatsApp */
   }
   
+  .mercadolibre-btn {
+    display: inline-block;
+    background-color: #ffdf00; /* Color de fondo amarillo de MercadoLibre */
+    color: #333; /* Texto negro */
+    text-decoration: none; /* Sin subrayado */
+    font-family: Arial, sans-serif; /* Fuente limpia y profesional */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mercadolibre-btn:hover {
+    transform: translateY(-3px); /* Pequeño salto al pasar el cursor */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.mercadolibre-btn:active {
+    transform: translateY(1px); /* Simula un clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra menos intensa */
+}
