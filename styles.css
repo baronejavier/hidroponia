@@ -18,7 +18,7 @@ header {
     padding: 0;
     text-align: center;
     font-size: 1.5em;
-    background-image: url(img/portada.webp);
+    background-image: url(img/portada.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
@@ -497,64 +497,20 @@ font-size: 1.5rem;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-#socio-comercial {
-    background-color: #f4f4f4;
-    padding: 40px 0;
-    text-align: center;
-  }
-  
-  #socio-comercial .container {
-    width: 80%;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  #socio-comercial h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  #socio-comercial p {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    margin-bottom: 30px;
-  }
-  
-  .btn-socio {
-    background-color: #25d366; /* Color verde característico de WhatsApp */
+.boton-mercadopago {
+    background: linear-gradient(45deg, #00c4a3, #007bbf);
     color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-socio:hover {
-    background-color: #128c7e; /* Color más oscuro de WhatsApp */
-  }
-  
-  .mercadolibre-btn {
-    display: inline-block;
-    background-color: #ffdf00; /* Color de fondo amarillo de MercadoLibre */
-    color: #333; /* Texto negro */
-    text-decoration: none; /* Sin subrayado */
-    font-family: Arial, sans-serif; /* Fuente limpia y profesional */
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    padding: 12px 20px;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.mercadolibre-btn:hover {
-    transform: translateY(-3px); /* Pequeño salto al pasar el cursor */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
-}
-
-.mercadolibre-btn:active {
-    transform: translateY(1px); /* Simula un clic */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra menos intensa */
+.boton-mercadopago:hover {
+    background: linear-gradient(45deg, #007bbf, #00c4a3);
+    transform: scale(1.05);
 }
