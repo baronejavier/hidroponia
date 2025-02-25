@@ -505,7 +505,9 @@ font-size: 1.5rem;
     padding: 15px 25px;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -514,3 +516,4 @@ font-size: 1.5rem;
     background: linear-gradient(45deg, #007bbf, #00c4a3);
     transform: scale(1.05);
 }
+
