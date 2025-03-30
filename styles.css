@@ -571,3 +571,77 @@ font-size: 1.5rem;
     text-decoration: underline;
 }
 
+#oferta {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+.oferta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.urgencia {
+    font-size: 1.2rem;
+    color: #e63946;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.envio {
+    font-size: 1.1rem;
+    color: #2a9d8f;
+    margin-bottom: 20px;
+}
+
+.oferta-imagen {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.precio {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.precio-bitcoin {
+    color: #f1a408;
+}
+
+.botones-pago a {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.boton-bitcoin {
+    background-color: #f1a408;
+}
+
+.boton-mercadopago {
+    background-color: #00a859;
+}
+
+.botones-pago a:hover {
+    opacity: 0.8;
+}
