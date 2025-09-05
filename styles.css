@@ -453,13 +453,6 @@ font-size: 1.5rem;
     background: #004d40;
 }
 
-.social-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin: 20px 0;
-}
-
 .btn-social {
     display: flex;
     align-items: center;
@@ -471,30 +464,6 @@ font-size: 1.5rem;
     font-size: 16px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-social img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-.btn-social.instagram {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-
-.btn-social.facebook {
-    background: #4267B2;
-}
-
-.btn-social.tiktok {
-    background: #010101; /* Colores oficiales */
-    color: #fff; /* Texto en blanco para contraste */
-}
-
-.btn-social:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 .boton-mercadopago {
@@ -533,33 +502,6 @@ font-size: 1.5rem;
 #contacto p {
     font-size: 1.1rem;
     color: #666;
-}
-
-/* Estilo del botón de llamada */
-.call-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 25px;
-    background-color: #4CAF50;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.call-button:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
-}
-
-/* Estilo adicional para los detalles de contacto */
-.contact-details {
-    margin-top: 30px;
-    font-size: 1.1rem;
-    color: #333;
 }
 
 .contact-details a {
