@@ -580,3 +580,11 @@ h2 {
 .botones-pago a:hover {
     opacity: 0.8;
 }
+
+.precio {
+    font-size: 2em; 
+    color: #ff7a00;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
