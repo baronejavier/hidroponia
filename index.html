@@ -36,47 +36,76 @@
         </nav>
     </header>
 
-    <section id="oferta">
-        <div class="oferta-container">
-            <h2>Oferta n°1: Sistema hidropónico completo para 12 plantas</h2>
-            <p class="precio">$144.900</p>
-            <p class="envio">Envío gratis a todo el país.</p>
-            <p class="envio">*5% off con transferencia.</p>
-            <img src="img/12 plantas.png" alt="Sistema hidropónico completo para 12 plantas" class="oferta-imagen">
-    
-            <div class="botones-pago">
-                <a href="https://www.mercadolibre.com.ar/sistema-hidroponico-jyj-hidroponia-para-12-plantas-vertical/up/MLAU3263646611" class="boton-mercadopago" target="_blank">COMPRAR EN MERCADO LIBRE</a>
-            </div>
-            <h2>Oferta n°2: Sistema hidropónico completo para 24 plantas</h2>
-            <p class="precio">$194.900</p>
-            <p class="envio">Envío gratis a todo el país.</p>
-            <p class="envio">*5% off con transferencia.</p>
-            <img src="img/sistema completo.png" alt="Sistema hidropónico completo para 24 plantas" class="oferta-imagen">
-    
-            <div class="botones-pago">
-                <a href="https://articulo.mercadolibre.com.ar/MLA-1519178345-sistema-hidroponico-jyj-hidroponia-para-24-plantas-vertical-_JM" class="boton-mercadopago" target="_blank">COMPRAR EN MERCADO LIBRE</a>
-            </div>
-            <h2>Oferta n°3: Torre vertical para sistema de 24 plantas</h2>
-            <p class="precio">$129.900</p>
-            <p class="envio">Envío gratis a todo el país.</p>
-            <p class="envio">*5% off con transferencia.</p>
-            <img src="img/torre sola.png" alt="Torre vertical para sistema de 24 plantas" class="oferta-imagen">
-    
-            <div class="botones-pago">
-                <a href="https://www.mercadolibre.com.ar/kit-jyj-hidroponia-24-plantas--torre-para-sistema-vertical/up/MLAU3332534548" class="boton-mercadopago" target="_blank">COMPRAR EN MERCADO LIBRE</a>
-            </div>
-            <h2>Oferta n°4: Sistema vertical para 6 plantas</h2>
-            <p class="precio">$74.900</p>
-            <p class="envio">Envío gratis a todo el país.</p>
-            <p class="envio">*5% off con transferencia.</p>
-            <img src="img/mini sistema.png" alt="Sistema vertical para 6 plantas" class="oferta-imagen">
-    
-            <div class="botones-pago">
-                <a href="https://www.mercadolibre.com.ar/sistema-hidroponico-vertical-jyj-hidroponia-para-6-plantas/up/MLAU3502206744" class="boton-mercadopago" target="_blank">COMPRAR EN MERCADO LIBRE</a>
-            </div>
-        </div>
-    </section>
+    <!-- 🔝 Barra superior de oferta -->
+<div id="barra-oferta">
+  <span id="barra-texto"></span>
+  <span id="barra-contador"></span>
+</div>
 
+<section id="oferta">
+  <div class="oferta-container">
+    <h1 id="titulo-oferta" class="titulo-ofertas"></h1>
+    <p id="subtitulo-oferta" class="subtitulo"></p>
+
+    <div class="contador">
+       <span id="contador-texto"></span> 
+       <span id="contador-tiempo">Cargando...</span>
+    </div>
+
+    <!-- Producto 1 -->
+    <div class="oferta-item">
+      <h2>Sistema hidropónico completo para 12 plantas</h2>
+      <img src="img/12 plantas.png" alt="Sistema hidropónico completo para 12 plantas" class="oferta-imagen">
+      <p class="precio-original" id="precio1-original"></p>
+      <p class="precio-descuento" id="precio1-descuento"></p>
+      <p class="transferencia" id="oferta1-transferencia"></p>
+      <div class="botones-pago">
+        <a href="https://www.mercadolibre.com.ar/sistema-hidroponico-jyj-hidroponia-para-12-plantas-vertical/up/MLAU3263646611" 
+           class="boton-mercadopago" target="_blank">COMPRAR EN MERCADO LIBRE</a>
+      </div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="oferta-item">
+      <h2>Sistema hidropónico completo para 24 plantas</h2>
+      <img src="img/sistema completo.png" alt="Sistema hidropónico completo para 24 plantas" class="oferta-imagen">
+      <p class="precio-original" id="precio2-original"></p>
+      <p class="precio-descuento" id="precio2-descuento"></p>
+      <p class="transferencia" id="oferta2-transferencia"></p>
+      <div class="botones-pago">
+        <a href="https://articulo.mercadolibre.com.ar/MLA-1519178345-sistema-hidroponico-jyj-hidroponia-para-24-plantas-vertical-_JM" 
+           class="boton-mercadopago" target="_blank">COMPRAR EN MERCADO LIBRE</a>
+      </div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="oferta-item">
+      <h2>Torre vertical para sistema de 24 plantas</h2>
+      <img src="img/torre sola.png" alt="Torre vertical para sistema de 24 plantas" class="oferta-imagen">
+      <p class="precio-original" id="precio3-original"></p>
+      <p class="precio-descuento" id="precio3-descuento"></p>
+      <p class="transferencia" id="oferta3-transferencia"></p>
+      <div class="botones-pago">
+        <a href="https://www.mercadolibre.com.ar/kit-jyj-hidroponia-24-plantas--torre-para-sistema-vertical/up/MLAU3332534548" 
+           class="boton-mercadopago" target="_blank">COMPRAR EN MERCADO LIBRE</a>
+      </div>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="oferta-item">
+      <h2>Sistema vertical para 6 plantas</h2>
+      <img src="img/mini sistema.png" alt="Sistema vertical para 6 plantas" class="oferta-imagen">
+      <p class="precio-original" id="precio4-original"></p>
+      <p class="precio-descuento" id="precio4-descuento"></p>
+      <p class="transferencia" id="oferta4-transferencia"></p>
+      <div class="botones-pago">
+        <a href="https://www.mercadolibre.com.ar/sistema-hidroponico-vertical-jyj-hidroponia-para-6-plantas/up/MLAU3502206744" 
+           class="boton-mercadopago" target="_blank">COMPRAR EN MERCADO LIBRE</a>
+      </div>
+    </div>
+  </div>
+</section>
+    
     <main>
         <section id="inicio">
             <div class="container">
@@ -250,12 +279,11 @@ Estas soluciones concentradas son ideales tanto para quienes se inician en la hi
 
         <a class="whatsapp-button" href="https://wa.me/3765188420?text=¡Hola! Quiero obtener más información sobre hidroponía." target="_blank">WhatsApp</a>
     </main>
-    <script type="text/javascript">
-        document.addEventListener('contextmenu', event => event.preventDefault());
-    </script>
+
     <footer>
         <p>Derechos de autor © 2025 JyJ Hidroponía. Todos los derechos reservados.</p>
     </footer>
 </body>
+<script src="script.js"></script>
 </html>
 
