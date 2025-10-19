@@ -515,9 +515,7 @@ font-size: 1.5rem;
 
 /* 🔝 Barra superior fija */
 #barra-oferta {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position:relative;
   width: 100%;
   background: linear-gradient(90deg, #0a7a3f, #4caf50);
   color: white;
@@ -535,11 +533,6 @@ font-size: 1.5rem;
   background: rgba(255,255,255,0.2);
   padding: 4px 10px;
   border-radius: 8px;
-}
-
-/* Espaciado extra para que no tape el contenido */
-body {
-  padding-top: 50px;
 }
 
 /* --- Estilos de las ofertas --- */
