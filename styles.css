@@ -513,7 +513,6 @@ font-size: 1.5rem;
     text-decoration: underline;
 }
 
-/* 🔝 Barra superior fija */
 #barra-oferta {
   position:relative;
   width: 100%;
@@ -535,7 +534,6 @@ font-size: 1.5rem;
   border-radius: 8px;
 }
 
-/* --- Estilos de las ofertas --- */
 #oferta {
   background: #f9f9f9;
   padding: 40px 10px;
@@ -565,18 +563,50 @@ font-size: 1.5rem;
   font-weight: bold;
 }
 
+.oferta-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px auto;
+  max-width: 1300px;
+}
+
 .oferta-item {
   background: white;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 25px;
-  margin: 30px auto;
-  max-width: 600px;
-  transition: transform 0.3s;
+  flex: 1 1 280px;
+  max-width: 300px;
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .oferta-item:hover {
-  transform: scale(1.02);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+@media (min-width: 1200px) {
+  .oferta-item {
+    flex: 1 1 22%;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .oferta-item {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 767px) {
+  .oferta-item {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
 }
 
 .oferta-imagen {
@@ -594,7 +624,7 @@ font-size: 1.5rem;
 
 .precio-descuento {
   font-size: 1.6em;
-  color: #0a7a3f;
+  color: #ff7300;
   font-weight: bold;
   margin-bottom: 8px;
 }
@@ -619,3 +649,12 @@ font-size: 1.5rem;
 .boton-mercadopago:hover {
   background-color: #007cb8;
 }
+
+.envio-gratis {
+  font-weight: bold;
+  color: #000000;
+  margin: 10px 0;
+  font-size: 1rem;
+  text-align: center;
+}
+

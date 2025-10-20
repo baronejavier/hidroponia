@@ -68,8 +68,10 @@ function actualizarContador() {
   const diferencia = objetivo - ahora;
 
   if (diferencia <= 0) {
-    contadorTiempo.innerHTML = "¡Cambio de oferta!";
-    barraContador.innerHTML = "¡Cambio de oferta!";
+    contadorTiempo.innerHTML = tieneDescuento
+      ? "🌱 ¡Cosecha lista! Oferta finalizada"
+      : "💧 Hidroponía en acción: ¡cuida tus plantas!";
+    barraContador.innerHTML = contadorTiempo.innerHTML;
     return;
   }
 
@@ -86,8 +88,11 @@ function actualizarContador() {
     barraTexto.innerHTML = "🌱 Promo del 1 al 10 - 10% OFF";
     contadorTexto.textContent = "⏳ La oferta termina en:";
   } else {
-    barraTexto.innerHTML = "🌱 Próxima Promo Hidropónica";
-    contadorTexto.textContent = "⏳ La próxima promo empieza en:";
+    // Mensajes fijos sin relación con ofertas
+    barraTexto.innerHTML = "🌱 El futuro de tus plantas empieza aquí";
+    contadorTexto.textContent = "💧 Tecnología y cuidado en cada planta";
+    contadorTiempo.innerHTML = "";
+    barraContador.innerHTML = "";
   }
 }
 
