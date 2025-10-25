@@ -9,17 +9,17 @@ const precios = [
   { id: 4, valor: 74900 }
 ];
 
-const descuentoOferta = 0.10; // 1 al 10
-const descuentoNormal = 0.05;  // resto del mes
+const descuentoOferta = 0.10; // fin de semana
+const descuentoNormal = 0.05; // días de semana
 
 // ===========================
-// 2️⃣ Verificar si estamos en oferta
+// 2️⃣ Verificar si estamos en oferta (sábado o domingo)
 const hoy = new Date();
-const dia = hoy.getDate();
+const diaSemana = hoy.getDay(); // 0 = domingo, 6 = sábado
 const mes = hoy.getMonth();
 const año = hoy.getFullYear();
 
-const tieneDescuento = dia >= 1 && dia <= 10;
+const tieneDescuento = diaSemana === 0 || diaSemana === 6; // true sábados y domingos
 
 // ===========================
 // 3️⃣ Aplicar precios y mensaje de transferencia
@@ -47,17 +47,18 @@ const barraContador = document.getElementById("barra-contador");
 function calcularFechaObjetivo() {
   let objetivo;
   if (tieneDescuento) {
-    // Fin de la oferta: día 10 23:59:59
-    objetivo = new Date(año, mes, 10, 23, 59, 59);
+    // Fin de la oferta: domingo 23:59:59
+    const proximoDomingo = new Date(hoy);
+    proximoDomingo.setDate(hoy.getDate() + (7 - hoy.getDay()) % 7);
+    proximoDomingo.setHours(23, 59, 59, 999);
+    objetivo = proximoDomingo;
   } else {
-    // Próxima oferta: día 1 del próximo mes 00:00:00
-    let mesProx = mes + 1;
-    let añoProx = año;
-    if (mesProx > 11) {
-      mesProx = 0;
-      añoProx += 1;
-    }
-    objetivo = new Date(añoProx, mesProx, 1, 0, 0, 0);
+    // Próximo inicio de oferta: sábado 00:00:00
+    const diasHastaSabado = (6 - hoy.getDay() + 7) % 7;
+    const proximoSabado = new Date(hoy);
+    proximoSabado.setDate(hoy.getDate() + diasHastaSabado);
+    proximoSabado.setHours(0, 0, 0, 0);
+    objetivo = proximoSabado;
   }
   return objetivo;
 }
@@ -69,8 +70,8 @@ function actualizarContador() {
 
   if (diferencia <= 0) {
     contadorTiempo.innerHTML = tieneDescuento
-      ? "🌱 ¡Cosecha lista! Oferta finalizada"
-      : "💧 Hidroponía en acción: ¡cuida tus plantas!";
+      ? "🌱 ¡Fin de semana de ofertas finalizado!"
+      : "💧 Preparando las próximas ofertas...";
     barraContador.innerHTML = contadorTiempo.innerHTML;
     return;
   }
@@ -85,10 +86,9 @@ function actualizarContador() {
   barraContador.innerHTML = textoTiempo;
 
   if (tieneDescuento) {
-    barraTexto.innerHTML = "🌱 Promo del 1 al 10 - 10% OFF";
+    barraTexto.innerHTML = "🌿 Fin de semana de ofertas - 10% OFF";
     contadorTexto.textContent = "⏳ La oferta termina en:";
   } else {
-    // Mensajes fijos sin relación con ofertas
     barraTexto.innerHTML = "🌱 El futuro de tus plantas empieza aquí";
     contadorTexto.textContent = "💧 Tecnología y cuidado en cada planta";
     contadorTiempo.innerHTML = "";
