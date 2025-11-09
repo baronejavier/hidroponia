@@ -6,7 +6,6 @@ const precios = [
   { id: 1, valor: 144900 },
   { id: 2, valor: 194900 },
   { id: 3, valor: 129900 },
-  { id: 4, valor: 84900 }
 ];
 
 const descuentoOferta = 0.10; // fin de semana
@@ -98,6 +97,7 @@ function actualizarContador() {
 
 setInterval(actualizarContador, 1000);
 actualizarContador();
+
 
 
 
