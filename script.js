@@ -8,8 +8,8 @@ const precios = [
   { id: 3, valor: 134900 },
 ];
 
-const descuentoOferta = 0.15; // fin de semana
-const descuentoNormal = 0.10; // días de semana
+const descuentoOferta = 0.10; // fin de semana
+const descuentoNormal = 0.05; // días de semana
 
 // ===========================
 // 2️⃣ Verificar si estamos en oferta (sábado o domingo)
@@ -85,7 +85,7 @@ function actualizarContador() {
   barraContador.innerHTML = textoTiempo;
 
   if (tieneDescuento) {
-    barraTexto.innerHTML = "🌿 Fin de semana de ofertas - 15% OFF";
+    barraTexto.innerHTML = "🌿 Fin de semana de ofertas - 10% OFF";
     contadorTexto.textContent = "⏳ La oferta termina en:";
   } else {
     barraTexto.innerHTML = "🌱 El futuro de tus plantas empieza aquí";
