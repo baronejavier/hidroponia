@@ -8,8 +8,8 @@ const precios = [
   { id: 3, valor: 134900 },
 ];
 
-const descuentoOferta = 0.10; // fin de semana
-const descuentoNormal = 0.05; // días de semana
+const descuentoOferta = 0.15; // fin de semana
+const descuentoNormal = 0.10; // días de semana
 
 // ===========================
 // 2️⃣ Verificar si estamos en oferta (sábado o domingo)
@@ -32,8 +32,8 @@ precios.forEach(prod => {
   document.getElementById(`precio${prod.id}-descuento`).innerHTML = `<span class="descuento">$${precioFinal.toLocaleString("es-AR")}</span>`;
 
   document.getElementById(`oferta${prod.id}-transferencia`).innerHTML = tieneDescuento
-    ? `💸 10% OFF por transferencia`
-    : `💳 5% off con transferencia`;
+    ? `💸 15% OFF por transferencia`
+    : `💳 10% off con transferencia`;
 });
 
 // ===========================
@@ -85,7 +85,7 @@ function actualizarContador() {
   barraContador.innerHTML = textoTiempo;
 
   if (tieneDescuento) {
-    barraTexto.innerHTML = "🌿 Fin de semana de ofertas - 10% OFF";
+    barraTexto.innerHTML = "🌿 Fin de semana de ofertas - 15% OFF";
     contadorTexto.textContent = "⏳ La oferta termina en:";
   } else {
     barraTexto.innerHTML = "🌱 El futuro de tus plantas empieza aquí";
@@ -97,6 +97,7 @@ function actualizarContador() {
 
 setInterval(actualizarContador, 1000);
 actualizarContador();
+
 
 
 
