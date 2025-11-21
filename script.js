@@ -33,7 +33,7 @@ precios.forEach(prod => {
 
   document.getElementById(`oferta${prod.id}-transferencia`).innerHTML = tieneDescuento
     ? `💸 10% OFF por transferencia`
-    : `💳 5% off con transferencia`;
+    : `💸 5% off con transferencia`;
 });
 
 // ===========================
@@ -97,6 +97,7 @@ function actualizarContador() {
 
 setInterval(actualizarContador, 1000);
 actualizarContador();
+
 
 
 
