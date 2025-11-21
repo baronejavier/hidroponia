@@ -32,8 +32,8 @@ precios.forEach(prod => {
   document.getElementById(`precio${prod.id}-descuento`).innerHTML = `<span class="descuento">$${precioFinal.toLocaleString("es-AR")}</span>`;
 
   document.getElementById(`oferta${prod.id}-transferencia`).innerHTML = tieneDescuento
-    ? `💸 15% OFF por transferencia`
-    : `💳 10% off con transferencia`;
+    ? `💸 10% OFF por transferencia`
+    : `💳 5% off con transferencia`;
 });
 
 // ===========================
@@ -97,6 +97,7 @@ function actualizarContador() {
 
 setInterval(actualizarContador, 1000);
 actualizarContador();
+
 
 
 
