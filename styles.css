@@ -658,3 +658,80 @@ font-size: 1.5rem;
   text-align: center;
 }
 
+/* --- Sección Sobre el Director --- */
+
+.director-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.director-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.director-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.director-section a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.director-section a:hover {
+    color: #00548f;
+}
+
+.director-section .director-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Animación suave al cargar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Efecto “flotante” para la foto */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 600px) {
+    .director-section {
+        padding: 25px 20px;
+    }
+    
+    .director-section h2 {
+        font-size: 1.7rem;
+    }
+
+    .director-section p {
+        font-size: 1rem;
+    }
+}
+
+
