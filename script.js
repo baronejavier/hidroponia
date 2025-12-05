@@ -3,8 +3,8 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 // ===========================
 // 1️⃣ Precios base
 const precios = [
-  { id: 1, valor: 139900 },
-  { id: 2, valor: 184900 },
+  { id: 1, valor: 149900 },
+  { id: 2, valor: 194900 },
 ];
 
 const descuentoOferta = 0.10; // fin de semana
@@ -96,6 +96,7 @@ function actualizarContador() {
 
 setInterval(actualizarContador, 1000);
 actualizarContador();
+
 
 
 
