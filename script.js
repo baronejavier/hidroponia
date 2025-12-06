@@ -5,6 +5,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 const precios = [
   { id: 1, valor: 149900 },
   { id: 2, valor: 194900 },
+  { id: 3, valor: 124900 },
 ];
 
 const descuentoOferta = 0.10; // fin de semana
