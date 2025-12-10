@@ -14,14 +14,13 @@ body, html {
 }
 
 header {
-    background-color: #267a50; /* Verde claro */
     padding: 0;
     text-align: center;
     font-size: 1.5em;
-    background-image: url(img/portada.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    background-image: url("img/portada.png");
+    background-repeat: repeat-x;
+    background-position: top center;
+    background-size: auto 100%;
 }
 
 header img {
