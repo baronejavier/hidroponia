@@ -4,7 +4,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 // 1️⃣ Precios base
 const precios = [
   { id: 1, valor: 154900 },
-  { id: 2, valor: 229900 },
+  { id: 2, valor: 209900 },
   { id: 3, valor: 134900 },
 ];
 
@@ -97,6 +97,7 @@ function actualizarContador() {
 
 setInterval(actualizarContador, 1000);
 actualizarContador();
+
 
 
 
