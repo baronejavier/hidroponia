@@ -1,11 +1,11 @@
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 const precios = [
-  { id: 1, valor: 149900 },
-  { id: 2, valor: 184900 },
+  { id: 1, valor: 174900 },
+  { id: 2, valor: 224900 },
 ];
 
-const descuentoNormal = 0.05;
+const descuentoNormal = 0.15;
 
 precios.forEach(prod => {
   const precioOriginal = prod.valor;
@@ -18,7 +18,7 @@ precios.forEach(prod => {
     `<span class="descuento">$${precioFinal.toLocaleString("es-AR")}</span>`;
 
   document.getElementById(`oferta${prod.id}-transferencia`).innerHTML =
-    `💸 5% off con transferencia + Curso de hidroponía`;
+    `💸 15% off con transferencia + Curso de hidroponía`;
 });
 
 const barraTexto = document.getElementById("barra-texto");
