@@ -3,6 +3,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 const precios = [
   { id: 1, valor: 149900 },
   { id: 2, valor: 189900 },
+  { id: 3, valor: 119900 },
 ];
 
 const descuentoNormal = 0;
@@ -17,7 +18,7 @@ precios.forEach(prod => {
   if (descuentoEl) descuentoEl.innerHTML = "";
 
   document.getElementById(`oferta${prod.id}-transferencia`).innerHTML =
-    `💸 Beneficios exclusivos con transferencia: Curso de hidroponía + Solución mineral`;
+    `💸 Beneficios exclusivos con transferencia: Curso de hidroponía + Solución mineral + Semillas`;
 });
 
 
