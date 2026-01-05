@@ -1,25 +1,25 @@
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 const precios = [
-  { id: 1, valor: 174900 },
-  { id: 2, valor: 224900 },
+  { id: 1, valor: 149900 },
+  { id: 2, valor: 189900 },
 ];
 
-const descuentoNormal = 0.15;
+const descuentoNormal = 0;
 
 precios.forEach(prod => {
-  const precioOriginal = prod.valor;
-  const precioFinal = Math.round(precioOriginal * (1 - descuentoNormal));
+  const precio = prod.valor;
 
   document.getElementById(`precio${prod.id}-original`).innerHTML =
-    `<span class="tachado">$${precioOriginal.toLocaleString("es-AR")}</span>`;
+    `<span class="precio">$${precio.toLocaleString("es-AR")}</span>`;
 
-  document.getElementById(`precio${prod.id}-descuento`).innerHTML =
-    `<span class="descuento">$${precioFinal.toLocaleString("es-AR")}</span>`;
+  const descuentoEl = document.getElementById(`precio${prod.id}-descuento`);
+  if (descuentoEl) descuentoEl.innerHTML = "";
 
   document.getElementById(`oferta${prod.id}-transferencia`).innerHTML =
-    `💸 15% off con transferencia + Curso de hidroponía`;
+    `💸 Beneficios exclusivos con transferencia: Curso de hidroponía + Solución mineral`;
 });
+
 
 const barraTexto = document.getElementById("barra-texto");
 const contadorTexto = document.getElementById("contador-texto");

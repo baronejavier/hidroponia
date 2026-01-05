@@ -614,16 +614,9 @@ font-size: 1.5rem;
   margin-bottom: 15px;
 }
 
-.precio-original {
-  text-decoration: line-through;
-  color: #777;
-  font-size: 1.2em;
-  margin: 5px 0;
-}
-
-.precio-descuento {
-  font-size: 1.6em;
-  color: #ff7300;
+.precio {
+  font-size: 1.5em;
+  color: #ff0000;
   font-weight: bold;
   margin-bottom: 8px;
 }
