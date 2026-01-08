@@ -3,6 +3,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 const precios = [
   { id: 1, valor: 139900 },
   { id: 2, valor: 179900 },
+  { id: 3, valor: 104900 },
 ];
 
 const descuentoNormal = 0;
