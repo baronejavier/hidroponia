@@ -17,7 +17,7 @@ precios.forEach(prod => {
   if (descuentoEl) descuentoEl.innerHTML = "";
 
   document.getElementById(`oferta${prod.id}-transferencia`).innerHTML =
-    `💸 Beneficios exclusivos con transferencia: Curso de hidroponía + Solución mineral + Semillas`;
+    `💸 Beneficios exclusivos con transferencia: Curso de hidroponía + Solución mineral`;
 });
 
 
@@ -30,6 +30,7 @@ barraTexto.innerHTML = "🌱 El futuro de tus plantas empieza aquí";
 contadorTexto.textContent = "💧 Tecnología y cuidado en cada planta";
 contadorTiempo.innerHTML = "";
 barraContador.innerHTML = "";
+
 
 
 
