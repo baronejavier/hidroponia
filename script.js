@@ -1,9 +1,9 @@
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 const precios = [
-  { id: 1, valor: 134900 },
-  { id: 2, valor: 184900 },
-  { id: 3, valor: 124900 },
+  { id: 1, valor: 129900 },
+  { id: 2, valor: 174900 },
+  { id: 3, valor: 114900 },
 ];
 
 const descuentoNormal = 0;
@@ -30,6 +30,7 @@ barraTexto.innerHTML = "🌱 El futuro de tus plantas empieza aquí";
 contadorTexto.textContent = "💧 Tecnología y cuidado en cada planta";
 contadorTiempo.innerHTML = "";
 barraContador.innerHTML = "";
+
 
 
 
