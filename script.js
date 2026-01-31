@@ -5,7 +5,7 @@ const precios = [
   { id: 2, valor: 184900 },
 ];
 
-const descuentoTransferencia = 0.05;
+const descuentoTransferencia = 0.1;
 
 precios.forEach(prod => {
   const precio = prod.valor;
@@ -18,7 +18,7 @@ precios.forEach(prod => {
   if (descuentoEl) descuentoEl.innerHTML = "";
 
   document.getElementById(`oferta${prod.id}-transferencia`).innerHTML =
-    `💸 5% OFF pagando con transferencia: <strong>$${precioConDescuento.toLocaleString("es-AR")}</strong>`;
+    `💸 10% OFF pagando con transferencia: <strong>$${precioConDescuento.toLocaleString("es-AR")}</strong>`;
 });
 
 const barraTexto = document.getElementById("barra-texto");
@@ -30,6 +30,7 @@ barraTexto.innerHTML = "🌱 El futuro de tus plantas empieza aquí";
 contadorTexto.textContent = "💧 Tecnología y cuidado en cada planta";
 contadorTiempo.innerHTML = "";
 barraContador.innerHTML = "";
+
 
 
 
