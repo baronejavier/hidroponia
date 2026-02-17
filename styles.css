@@ -650,84 +650,6 @@ font-size: 1.5rem;
   text-align: center;
 }
 
-/* --- Sección Sobre el Director --- */
-
-.director-section {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 40px 30px;
-    background: #ffffff;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    animation: fadeIn 0.8s ease;
-}
-
-.director-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: #1a1a1a;
-}
-
-.director-section p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #444;
-    margin-bottom: 20px;
-}
-
-.director-section a {
-    color: #0077cc;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.director-section a:hover {
-    color: #00548f;
-}
-
-.director-section .director-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 25px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    animation: float 4s ease-in-out infinite;
-}
-
-/* Animación suave al cargar */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Efecto “flotante” para la foto */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0); }
-}
-
-/* Adaptación a pantallas pequeñas */
-@media (max-width: 600px) {
-    .director-section {
-        padding: 25px 20px;
-    }
-    
-    .director-section h2 {
-        font-size: 1.7rem;
-    }
-
-    .director-section p {
-        font-size: 1rem;
-    }
-}
-
-/* ===== SECCIÓN MAYORISTAS - ESTILO PREMIUM ===== */
-
 #mayoristas {
   background: linear-gradient(135deg, #f0faf6 0%, #ffffff 100%);
   padding: 70px 20px;
@@ -739,7 +661,6 @@ font-size: 1.5rem;
   margin: auto;
 }
 
-/* TÍTULO */
 #mayoristas h2 {
   text-align: center;
   color: #0f5132;
@@ -754,7 +675,6 @@ font-size: 1.5rem;
   margin-bottom: 35px;
 }
 
-/* CAJA PRINCIPAL */
 .mayorista-box {
   background: #ffffff;
   border-radius: 16px;
@@ -763,7 +683,6 @@ font-size: 1.5rem;
   border: 1px solid #e6f2ed;
 }
 
-/* DESTACADO DEL MÍNIMO */
 .minimo-destacado {
   background: #e8f6f2;
   border-left: 5px solid #2a9d8f;
@@ -774,7 +693,6 @@ font-size: 1.5rem;
   color: #0f5132;
 }
 
-/* LISTAS */
 .mayorista-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -799,7 +717,6 @@ font-size: 1.5rem;
   margin-right: 8px;
 }
 
-/* BOTÓN */
 #mayoristas .boton-mercadopago {
   display: block;
   max-width: 340px;
@@ -821,7 +738,6 @@ font-size: 1.5rem;
   box-shadow: 0 8px 20px rgba(42,157,143,0.4);
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .mayorista-grid {
     grid-template-columns: 1fr;
