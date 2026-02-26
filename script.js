@@ -1,9 +1,9 @@
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 const precios = [
-  { id: 1, valor: 149900 },
-  { id: 2, valor: 199900 },
-  { id: 3, valor: 124900 },
+  { id: 1, valor: 139900 },
+  { id: 2, valor: 174900 },
+  { id: 3, valor: 99900 },
 ];
 
 precios.forEach(prod => {
@@ -29,6 +29,7 @@ contadorTexto.textContent = "💧 Tecnología y cuidado en cada planta";
 contadorTiempo.innerHTML = "";
 
 barraContador.innerHTML = "";
+
 
 
 
