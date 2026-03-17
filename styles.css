@@ -235,7 +235,6 @@ font-size: 1.5rem;
     }
 }
 
-/* Estilos de la sección "Servicios" */
 #servicios {
     background-color: #F2F2F2; /* Gris claro */
     padding: 50px 0;
@@ -344,8 +343,6 @@ font-size: 1.5rem;
     transform: translateY(-10px);
 }
 
-
-/* Estilos para cada ítem de pregunta y respuesta */
 .faq-item {
     margin-bottom: 20px; /* Espacio entre ítems */
     text-align: justify; /* Justificar el texto */
@@ -368,7 +365,6 @@ font-size: 1.5rem;
     box-sizing: border-box;
 }
 
-/* Estilos del botón flotante de WhatsApp */
 .whatsapp-button {
     position: fixed;
     bottom: 2%;
@@ -405,19 +401,6 @@ font-size: 1.5rem;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-}
-
-/* Estilo personalizado para el botón de Mercado Pago */
-.mercadopago-button {
-    background-color: #e53935 !important; /* Cambiar el color de fondo */
-    color: white !important; /* Cambiar el color del texto */
-    border-radius: 5px !important; /* Redondear bordes */
-    padding: 5px 5px !important; /* Cambiar el tamaño */
-    font-size: 16px !important; /* Cambiar el tamaño de la fuente */
-}
-
-.mercadopago-button:hover {
-    background-color: #dd1515 !important; /* Rojo más oscuro cuando el ratón pasa por encima */
 }
 
 .contact {
@@ -463,26 +446,6 @@ font-size: 1.5rem;
     font-size: 16px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.boton-mercadopago {
-    background: linear-gradient(45deg, #00c4a3, #007bbf);
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.boton-mercadopago:hover {
-    background: linear-gradient(45deg, #007bbf, #00c4a3);
-    transform: scale(1.05);
 }
 
 /* Estilo de la sección de contacto */
@@ -619,27 +582,6 @@ font-size: 1.5rem;
   color: #ff0000;
   font-weight: bold;
   margin-bottom: 8px;
-}
-
-.transferencia {
-  font-size: 1em;
-  color: #0a7a3f;
-  font-weight: 500;
-}
-
-.boton-mercadopago {
-  display: inline-block;
-  background-color: #009ee3;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  margin-top: 10px;
-  transition: 0.3s;
-}
-
-.boton-mercadopago:hover {
-  background-color: #007cb8;
 }
 
 .envio-gratis {
