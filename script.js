@@ -1,46 +1,236 @@
-document.addEventListener('contextmenu', event => event.preventDefault());
+// ═══════════════════════════════
+// CONFIGURACIÓN DE OFERTA
+// ═══════════════════════════════
+const ofertaConfig = {
+  texto: "🔥 Producción inteligente en tu hogar",
+  titulo: "Elegí tu sistema y empezá hoy",
+  subtitulo: "Tecnología hidropónica diseñada para producir todo el año",
+  duracionHoras: 48
+};
 
-const precios = [
-  { id: 1, valor: 159990 },
-  { id: 2, valor: 204990 },
-  { id: 3, valor: 134990 },
-];
+// ═══════════════════════════════
+// FECHA PERSISTENTE (URGENTE REAL)
+// ═══════════════════════════════
+let fechaFin = localStorage.getItem("oferta_fin");
 
-precios.forEach(prod => {
-  const precio = prod.valor;
+if (!fechaFin) {
+  const ahora = new Date();
+  ahora.setHours(ahora.getHours() + ofertaConfig.duracionHoras);
+  fechaFin = ahora.getTime();
+  localStorage.setItem("oferta_fin", fechaFin);
+} else {
+  fechaFin = parseInt(fechaFin);
+}
 
-  document.getElementById(`precio${prod.id}-original`).innerHTML =
-    `<span class="precio">$${precio.toLocaleString("es-AR")}</span>`;
+// ═══════════════════════════════
+// TEXTOS DINÁMICOS
+// ═══════════════════════════════
+document.getElementById("barra-texto").textContent = ofertaConfig.texto;
+document.getElementById("titulo-oferta").textContent = ofertaConfig.titulo;
+document.getElementById("subtitulo-oferta").textContent = ofertaConfig.subtitulo;
+document.getElementById("contador-texto").textContent = "Finaliza en:";
 
-  const descuentoEl = document.getElementById(`precio${prod.id}-descuento`);
-  if (descuentoEl) descuentoEl.innerHTML = "";
+// ═══════════════════════════════
+// CONTADOR
+// ═══════════════════════════════
+function actualizarContador() {
+  const ahora = Date.now();
+  const distancia = fechaFin - ahora;
 
-  const ofertaEl = document.getElementById(`oferta${prod.id}-transferencia`);
-  if (ofertaEl) ofertaEl.innerHTML = "";
+  if (distancia <= 0) {
+    document.getElementById("contador-tiempo").textContent = "Finalizado";
+    document.getElementById("barra-contador").textContent = "Finalizado";
+    return;
+  }
+
+  const h = Math.floor(distancia / (1000 * 60 * 60));
+  const m = Math.floor((distancia / (1000 * 60)) % 60);
+  const s = Math.floor((distancia / 1000) % 60);
+
+  const tiempo = `${h}h ${m}m ${s}s`;
+
+  document.getElementById("contador-tiempo").textContent = tiempo;
+  document.getElementById("barra-contador").textContent = tiempo;
+}
+
+setInterval(actualizarContador, 1000);
+actualizarContador();
+
+// ═══════════════════════════════
+// MENÚ MOBILE
+// ═══════════════════════════════
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobile-menu");
+
+hamburger.addEventListener("click", () => {
+  mobileMenu.classList.toggle("open");
+  hamburger.classList.toggle("active");
 });
 
-const barraTexto = document.getElementById("barra-texto");
-const contadorTexto = document.getElementById("contador-texto");
-const contadorTiempo = document.getElementById("contador-tiempo");
-const barraContador = document.getElementById("barra-contador");
+document.querySelectorAll("#mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+    hamburger.classList.remove("active");
+  });
+});
 
-barraTexto.innerHTML = "🌱 El futuro de tus plantas empieza aquí";
-contadorTexto.textContent = "💧 Tecnología y cuidado en cada planta";
-contadorTiempo.innerHTML = "";
+// ═══════════════════════════════
+// NAVBAR SCROLL
+// ═══════════════════════════════
+const navbar = document.getElementById("navbar");
 
-barraContador.innerHTML = "";
+window.addEventListener("scroll", () => {
+  navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
 
+// ═══════════════════════════════
+// REVEAL (OPTIMIZADO)
+// ═══════════════════════════════
+const revealElements = document.querySelectorAll(".reveal");
 
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, {
+  threshold: 0.15
+});
 
+revealElements.forEach(el => observer.observe(el));
 
+// ═══════════════════════════════
+// CONTADORES HERO
+// ═══════════════════════════════
+const counters = document.querySelectorAll(".stat-num");
 
+function activarContadores() {
+  counters.forEach(counter => {
+    const target = +counter.dataset.target;
+    let current = 0;
+    const increment = target / 60;
 
+    function update() {
+      current += increment;
+      if (current < target) {
+        counter.textContent = Math.ceil(current);
+        requestAnimationFrame(update);
+      } else {
+        counter.textContent = target;
+      }
+    }
 
+    update();
+  });
+}
 
+let countersActivados = false;
 
+const statsObserver = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !countersActivados) {
+    activarContadores();
+    countersActivados = true;
+  }
+}, { threshold: 0.4 });
 
+const statsSection = document.querySelector(".hero-stats");
+if (statsSection) statsObserver.observe(statsSection);
 
+// ═══════════════════════════════
+// FAQ INTERACTIVO
+// ═══════════════════════════════
+document.querySelectorAll(".faq-item").forEach(item => {
+  const btn = item.querySelector(".faq-q");
 
+  btn.addEventListener("click", () => {
+    const abierto = item.classList.contains("open");
 
+    document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
 
+    if (!abierto) item.classList.add("open");
+  });
+});
 
+// ═══════════════════════════════
+// SCROLL SUAVE
+// ═══════════════════════════════
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+// ═══════════════════════════════
+// PARTÍCULAS HERO
+// ═══════════════════════════════
+const particlesContainer = document.getElementById("particles");
+
+if (particlesContainer) {
+  for (let i = 0; i < 35; i++) {
+    const p = document.createElement("span");
+    p.classList.add("particle");
+
+    p.style.left = Math.random() * 100 + "%";
+    p.style.animationDuration = (5 + Math.random() * 10) + "s";
+    p.style.opacity = Math.random();
+
+    particlesContainer.appendChild(p);
+  }
+}
+
+// ═══════════════════════════════
+// PRECIOS ESTRATÉGICOS
+// ═══════════════════════════════
+
+// Ajuste dinámico según urgencia
+let factorOferta = 1.1;
+
+const horasRestantes = (fechaFin - Date.now()) / (1000 * 60 * 60);
+
+if (horasRestantes < 12) {
+  factorOferta = 1.15;
+}
+
+const preciosBase = {
+  p1: 144990,
+  p2: 184990,
+  p3: 124990
+};
+
+function formatearPrecio(num) {
+  return "$" + num.toLocaleString("es-AR");
+}
+
+function aplicarPrecios() {
+
+  // Producto 1
+  const p1_base = preciosBase.p1;
+  const p1_final = Math.round(p1_base * factorOferta);
+
+  document.getElementById("precio1-original").textContent = formatearPrecio(p1_final);
+  document.getElementById("oferta1-transferencia").textContent =
+    "Transferencia: " + formatearPrecio(p1_base);
+
+  // Producto 2
+  const p2_base = preciosBase.p2;
+  const p2_final = Math.round(p2_base * factorOferta);
+
+  document.getElementById("precio2-original").textContent = formatearPrecio(p2_final);
+  document.getElementById("oferta2-transferencia").textContent =
+    "Transferencia: " + formatearPrecio(p2_base);
+
+  // Producto 3
+  const p3_base = preciosBase.p3;
+  const p3_final = Math.round(p3_base * factorOferta);
+
+  document.getElementById("precio3-original").textContent = formatearPrecio(p3_final);
+  document.getElementById("oferta3-transferencia").textContent =
+    "Transferencia: " + formatearPrecio(p3_base);
+}
+
+aplicarPrecios();
