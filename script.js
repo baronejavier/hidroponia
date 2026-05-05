@@ -1,9 +1,9 @@
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 const precios = [
-  { id: 1, valor: 139900 },
-  { id: 2, valor: 169990 },
-  { id: 3, valor: 109990 },
+  { id: 1, valor: 159990 },
+  { id: 2, valor: 204990 },
+  { id: 3, valor: 134990 },
 ];
 
 precios.forEach(prod => {
