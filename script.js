@@ -188,18 +188,18 @@ if (particlesContainer) {
 // ═══════════════════════════════
 
 // Ajuste dinámico según urgencia
-let factorOferta = 1.1;
+let factorOferta = 1.35;
 
 const horasRestantes = (fechaFin - Date.now()) / (1000 * 60 * 60);
 
 if (horasRestantes < 12) {
-  factorOferta = 1.15;
+  factorOferta = 1.35;
 }
 
 const preciosBase = {
-  p1: 144990,
-  p2: 184990,
-  p3: 124990
+  p1: 150000,
+  p2: 195000,
+  p3: 135000
 };
 
 function formatearPrecio(num) {
