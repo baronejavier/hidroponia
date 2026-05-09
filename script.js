@@ -188,12 +188,12 @@ if (particlesContainer) {
 // ═══════════════════════════════
 
 // Ajuste dinámico según urgencia
-let factorOferta = 1.35;
+let factorOferta = 1.1;
 
 const horasRestantes = (fechaFin - Date.now()) / (1000 * 60 * 60);
 
 if (horasRestantes < 12) {
-  factorOferta = 1.35;
+  factorOferta = 1.15;
 }
 
 const preciosBase = {
