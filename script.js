@@ -193,7 +193,7 @@ let factorOferta = 1.1;
 const horasRestantes = (fechaFin - Date.now()) / (1000 * 60 * 60);
 
 if (horasRestantes < 12) {
-  factorOferta = 1.15;
+  factorOferta = 1.1;
 }
 
 const preciosBase = {
