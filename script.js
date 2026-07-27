@@ -197,9 +197,9 @@ if (horasRestantes < 12) {
 }
 
 const preciosBase = {
-  p1: 160000,
-  p2: 205000,
-  p3: 145000
+  p1: 145000,
+  p2: 185000,
+  p3: 125000
 };
 
 function formatearPrecio(num) {
