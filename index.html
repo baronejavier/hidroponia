@@ -16,16 +16,6 @@
 </head>
 <body>
 
-  <!-- ░░ BARRA DE OFERTA ░░ -->
-  <div id="barra-oferta">
-    <div class="barra-inner">
-      <span class="barra-icon">🌿</span>
-      <span id="barra-texto"></span>
-      <span class="separator">|</span>
-      <span id="barra-contador"></span>
-    </div>
-  </div>
-
   <!-- ░░ NAVBAR ░░ -->
   <header id="navbar">
     <div class="nav-inner">
@@ -180,71 +170,72 @@
       </div>
     </section>
 
-    <!-- ░░ OFERTA ░░ -->
+        <!-- ░░ OFERTA ░░ -->
     <section id="oferta" class="oferta-section">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">Oferta limitada</span>
-          <h2 id="titulo-oferta"></h2>
-          <p id="subtitulo-oferta" class="section-sub"></p>
-          <div class="countdown-wrap">
-            <span id="contador-texto" class="countdown-label"></span>
-            <div class="countdown-timer" id="contador-tiempo">Cargando...</div>
-          </div>
+          <span class="section-tag">Nuestros Sistemas</span>
+          <h2>Elegí tu sistema y empezá hoy</h2>
+          <p class="section-sub">Tecnología hidropónica diseñada para producir todo el año. <br>Precio exclusivo abonando por transferencia bancaria.</p>
         </div>
 
         <div class="oferta-grid">
-          <!-- Producto 1 -->
+          <!-- Producto 1: 12 Plantas -->
           <div class="oferta-card reveal">
-            <div class="card-badge">Básico</div>
+            <div class="card-badge">Ideal para empezar</div>
             <div class="card-img-wrap">
-              <img src="img/12 plantas.png" alt="Sistema hidropónico 12 plantas">
+              <img src="img/12 plantas.png" alt="Sistema hidropónico JyJ 12 plantas">
             </div>
             <div class="card-body">
-              <h3>Sistema Completo <span class="highlight">12 plantas</span></h3>
-              <p class="card-desc">Ideal para comenzar. Perfecto para hierbas, lechugas y vegetales de hoja.</p>
+              <h3>Sistema Completo <span class="highlight">12 Plantas</span></h3>
+              <p class="card-desc">Tu primer paso hacia la autonomía alimentaria. Perfecto para tener siempre a mano hierbas frescas, lechugas y verduras de hoja verde sin ocupar espacio.</p>
+              
               <div class="card-price">
-                <p class="precio" id="precio1-original"></p>
-                <p class="precio-transfer" id="oferta1-transferencia"></p>
+                <p class="precio" id="precio1"></p>
+                <span class="precio-etiqueta">Precio por pago con transferencia</span>
               </div>
-              <div class="card-envio">🚚 Envío a todo el país.</div>
-              <a href="https://wa.me/5493794884299?text=Hola!%20Quiero%20el%20sistema%20de%2012%20plantas." target="_blank" class="btn btn-card">Quiero este sistema →</a>
+              
+              <div class="card-envio">🚚 Envío asegurado a todo el país</div>
+              <a href="https://wa.me/5493794884299?text=Hola!%20Quiero%20el%20sistema%20de%2012%20plantas%20(precio%20transferencia)." target="_blank" class="btn btn-card">Lo quiero →</a>
             </div>
           </div>
 
-          <!-- Producto 2 -->
+          <!-- Producto 2: 24 Plantas (Destacado) -->
           <div class="oferta-card oferta-card--featured reveal">
-            <div class="card-badge badge-gold">⭐ Más vendido</div>
+            <div class="card-badge badge-gold">⭐ Más elegido</div>
             <div class="card-img-wrap">
-              <img src="img/sistema completo.png" alt="Sistema hidropónico 24 plantas">
+              <img src="img/sistema completo.png" alt="Sistema hidropónico JyJ 24 plantas completo">
             </div>
             <div class="card-body">
-              <h3>Sistema Completo <span class="highlight">24 plantas</span></h3>
-              <p class="card-desc">Máxima producción para tu hogar. Alimentá a toda la familia con alimentos frescos.</p>
+              <h3>Sistema Completo <span class="highlight">24 Plantas</span></h3>
+              <p class="card-desc">Producción seria para familias. Con este sistema lográs un rendimiento constante que complementa significativamente tu compra semanal de verduras frescas.</p>
+              
               <div class="card-price">
-                <p class="precio" id="precio2-original"></p>
-                <p class="precio-transfer" id="oferta2-transferencia"></p>
+                <p class="precio" id="precio2"></p>
+                <span class="precio-etiqueta">Precio por pago con transferencia</span>
               </div>
-              <div class="card-envio">🚚 Envío a todo el país.</div>
-              <a href="https://wa.me/5493794884299?text=Hola!%20Quiero%20el%20sistema%20de%2024%20plantas." target="_blank" class="btn btn-card">Quiero este sistema →</a>
+              
+              <div class="card-envio">🚚 Envío asegurado a todo el país</div>
+              <a href="https://wa.me/5493794884299?text=Hola!%20Quiero%20el%20sistema%20completo%20de%2024%20plantas%20(precio%20transferencia)." target="_blank" class="btn btn-card">Lo quiero →</a>
             </div>
           </div>
 
-          <!-- Producto 3 -->
+          <!-- Producto 3: Torre Vertical -->
           <div class="oferta-card reveal">
-            <div class="card-badge badge-green">Modular</div>
+            <div class="card-badge badge-green">A TÚ MEDIDA</div>
             <div class="card-img-wrap">
-              <img src="img/torre sola.png" alt="Torre hidropónica vertical 24 plantas">
+              <img src="img/torre sola.png" alt="Torre hidropónica vertical JyJ 24 plantas">
             </div>
             <div class="card-body">
-              <h3>Torre Vertical <span class="highlight">24 plantas</span></h3>
-              <p class="card-desc">Cultivo vertical inteligente. Ahorra espacio y maximiza tu producción.</p>
+              <h3>Torre Vertical <span class="highlight">24 Plantas</span></h3>
+              <p class="card-desc">Estructura vertical con 24 canastos incluidos. <strong>Solo torre y canastos</strong>, no incluye bomba ni demás componentes. Ideal para quienes ya tienen accesorios o buscan armar un sistema a medida en espacios reducidos.</p>              
               <div class="card-price">
-                <p class="precio" id="precio3-original"></p>
-                <p class="precio-transfer" id="oferta3-transferencia"></p>
+                <p class="precio" id="precio3"></p>
+                <span class="precio-etiqueta">Precio por pago con transferencia</span>
               </div>
-              <div class="card-envio">🚚 Envío a todo el país.</div>
-              <a href="https://wa.me/5493794884299?text=Hola!%20Quiero%20la%20Torre%20Vertical%20de%2024%20plantas." target="_blank" class="btn btn-card">Quiero este sistema →</a>
+              
+              <div class="card-envio">🚚 Envío asegurado a todo el país</div>
+              <a href="https://wa.me/5493794884299?text=Hola!%20Quiero%20la%20Torre%20Vertical%20de%2024%20plantas%20(precio%20transferencia)." target="_blank" class="btn btn-card">Lo quiero →</a>
             </div>
           </div>
         </div>

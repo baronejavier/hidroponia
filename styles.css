@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════
-   JyJ HIDROPONÍA — styles.css
+   JyJ HIDROPONÍA — styles.css (LIMPIO)
    Paleta: verde profundo + crema + acento dorado
    Tipografía: DM Serif Display + Outfit
    ════════════════════════════════════════════════════════ */
@@ -55,29 +55,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ── SELECTION ── */
 ::selection { background: var(--verde-light); color: var(--blanco); }
-
-/* ── BARRA DE OFERTA ── */
-#barra-oferta {
-  background: var(--verde-deep);
-  color: var(--crema);
-  text-align: center;
-  font-size: 0.82rem;
-  font-weight: 500;
-  padding: 8px 16px;
-  position: relative;
-  z-index: 1000;
-  letter-spacing: 0.03em;
-}
-.barra-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.barra-icon { font-size: 1rem; }
-.separator { opacity: 0.4; }
-#barra-contador { color: var(--dorado-light); font-weight: 600; }
 
 /* ── NAVBAR ── */
 #navbar {
@@ -282,7 +259,7 @@ nav ul li a.nav-cta:hover { background: var(--verde-mid); }
    ══════════════════════════════════ */
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--nav-h) - 36px);
+  min-height: calc(100vh - var(--nav-h));
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -400,7 +377,7 @@ nav ul li a.nav-cta:hover { background: var(--verde-mid); }
   font-weight: 700;
   line-height: 1;
 }
-.stat span:last-of-type { /* the unit */
+.stat span:last-of-type {
   font-family: var(--font-display);
   font-size: 2rem;
   color: var(--verde-bright);
@@ -634,19 +611,6 @@ nav ul li a.nav-cta:hover { background: var(--verde-mid); }
   padding: 100px 0;
   background: var(--blanco);
 }
-.countdown-wrap {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--verde-deep);
-  color: var(--crema);
-  padding: 10px 22px;
-  border-radius: var(--radius-pill);
-  margin-top: 20px;
-  font-size: 0.9rem;
-}
-.countdown-label { font-weight: 500; opacity: 0.8; }
-.countdown-timer { font-weight: 700; color: var(--dorado-light); font-family: var(--font-display); font-size: 1rem; }
 .oferta-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -731,14 +695,18 @@ nav ul li a.nav-cta:hover { background: var(--verde-mid); }
   color: var(--verde-deep);
   font-family: var(--font-display);
 }
-.oferta-card--featured .precio { color: var(--blanco); }
-.precio-transfer {
-  font-size: 0.88rem;
-  color: var(--verde-bright);
+.precio-etiqueta {
+  display: block;
+  font-size: 0.78rem;
   font-weight: 600;
+  color: var(--verde-bright);
   margin-top: 4px;
+  letter-spacing: 0.02em;
 }
-.oferta-card--featured .precio-transfer { color: var(--dorado-light); }
+.oferta-card--featured .precio-etiqueta {
+  color: var(--dorado-light);
+}
+.oferta-card--featured .precio { color: var(--blanco); }
 .card-envio {
   font-size: 0.82rem;
   font-weight: 600;

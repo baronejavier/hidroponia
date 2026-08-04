@@ -1,62 +1,4 @@
 // ═══════════════════════════════
-// CONFIGURACIÓN DE OFERTA
-// ═══════════════════════════════
-const ofertaConfig = {
-  texto: "🔥 Producción inteligente en tu hogar",
-  titulo: "Elegí tu sistema y empezá hoy",
-  subtitulo: "Tecnología hidropónica diseñada para producir todo el año",
-  duracionHoras: 48
-};
-
-// ═══════════════════════════════
-// FECHA PERSISTENTE (URGENTE REAL)
-// ═══════════════════════════════
-let fechaFin = localStorage.getItem("oferta_fin");
-
-if (!fechaFin) {
-  const ahora = new Date();
-  ahora.setHours(ahora.getHours() + ofertaConfig.duracionHoras);
-  fechaFin = ahora.getTime();
-  localStorage.setItem("oferta_fin", fechaFin);
-} else {
-  fechaFin = parseInt(fechaFin);
-}
-
-// ═══════════════════════════════
-// TEXTOS DINÁMICOS
-// ═══════════════════════════════
-document.getElementById("barra-texto").textContent = ofertaConfig.texto;
-document.getElementById("titulo-oferta").textContent = ofertaConfig.titulo;
-document.getElementById("subtitulo-oferta").textContent = ofertaConfig.subtitulo;
-document.getElementById("contador-texto").textContent = "Finaliza en:";
-
-// ═══════════════════════════════
-// CONTADOR
-// ═══════════════════════════════
-function actualizarContador() {
-  const ahora = Date.now();
-  const distancia = fechaFin - ahora;
-
-  if (distancia <= 0) {
-    document.getElementById("contador-tiempo").textContent = "Finalizado";
-    document.getElementById("barra-contador").textContent = "Finalizado";
-    return;
-  }
-
-  const h = Math.floor(distancia / (1000 * 60 * 60));
-  const m = Math.floor((distancia / (1000 * 60)) % 60);
-  const s = Math.floor((distancia / 1000) % 60);
-
-  const tiempo = `${h}h ${m}m ${s}s`;
-
-  document.getElementById("contador-tiempo").textContent = tiempo;
-  document.getElementById("barra-contador").textContent = tiempo;
-}
-
-setInterval(actualizarContador, 1000);
-actualizarContador();
-
-// ═══════════════════════════════
 // MENÚ MOBILE
 // ═══════════════════════════════
 const hamburger = document.getElementById("hamburger");
@@ -184,19 +126,9 @@ if (particlesContainer) {
 }
 
 // ═══════════════════════════════
-// PRECIOS ESTRATÉGICOS
+// PRECIOS POR TRANSFERENCIA
 // ═══════════════════════════════
-
-// Ajuste dinámico según urgencia
-let factorOferta = 1.1;
-
-const horasRestantes = (fechaFin - Date.now()) / (1000 * 60 * 60);
-
-if (horasRestantes < 12) {
-  factorOferta = 1.1;
-}
-
-const preciosBase = {
+const preciosTransferencia = {
   p1: 140000,
   p2: 175000,
   p3: 115000
@@ -207,30 +139,13 @@ function formatearPrecio(num) {
 }
 
 function aplicarPrecios() {
+  const p1El = document.getElementById("precio1");
+  const p2El = document.getElementById("precio2");
+  const p3El = document.getElementById("precio3");
 
-  // Producto 1
-  const p1_base = preciosBase.p1;
-  const p1_final = Math.round(p1_base * factorOferta);
-
-  document.getElementById("precio1-original").textContent = formatearPrecio(p1_final);
-  document.getElementById("oferta1-transferencia").textContent =
-    "Transferencia: " + formatearPrecio(p1_base);
-
-  // Producto 2
-  const p2_base = preciosBase.p2;
-  const p2_final = Math.round(p2_base * factorOferta);
-
-  document.getElementById("precio2-original").textContent = formatearPrecio(p2_final);
-  document.getElementById("oferta2-transferencia").textContent =
-    "Transferencia: " + formatearPrecio(p2_base);
-
-  // Producto 3
-  const p3_base = preciosBase.p3;
-  const p3_final = Math.round(p3_base * factorOferta);
-
-  document.getElementById("precio3-original").textContent = formatearPrecio(p3_final);
-  document.getElementById("oferta3-transferencia").textContent =
-    "Transferencia: " + formatearPrecio(p3_base);
+  if (p1El) p1El.textContent = formatearPrecio(preciosTransferencia.p1);
+  if (p2El) p2El.textContent = formatearPrecio(preciosTransferencia.p2);
+  if (p3El) p3El.textContent = formatearPrecio(preciosTransferencia.p3);
 }
 
 aplicarPrecios();
