@@ -129,9 +129,9 @@ if (particlesContainer) {
 // PRECIOS POR TRANSFERENCIA
 // ═══════════════════════════════
 const preciosTransferencia = {
-  p1: 145000,
-  p2: 185000,
-  p3: 125000
+  p1: 144900,
+  p2: 179900,
+  p3: 119900
 };
 
 function formatearPrecio(num) {
