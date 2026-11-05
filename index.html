@@ -1,484 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="JyJ Hidroponía — Sistemas hidropónicos premium fabricados en 3D para el hogar. Cultivá tus propios alimentos frescos con tecnología innovadora. Envíos a todo el país.">
-  <meta name="keywords" content="hidroponía, sistemas hidropónicos, cultivo en casa, agricultura sostenible, torres hidropónicas, impresión 3D, Misiones, Argentina">
-  <meta name="robots" content="index, follow">
-  <title>JyJ Hidroponía — La Agricultura del Futuro, Hoy en tu Hogar</title>
-  <link rel="icon" href="img/logo.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganando | Pensá como ganador, vestí como ganador</title>
+    <meta name="description" content="Ganando: Ropa casual y deportiva para hombres y mujeres. Calidad, estilo y actitud. Envíos en Posadas, Misiones.">
+    <meta name="keywords" content="ropa posadas, remeras, chombas, buzos jogging, moda masculina y femenina misiones, ropa talle grande posadas">
+    <meta name="author" content="Grupo Misiones">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Ganando | Ropa de Calidad">
+    <meta property="og:description" content="Descubrí nuestra colección de ropa casual y deportiva para él y ella.">
+    <meta property="og:image" content="img/logo.jpeg">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=5">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- ░░ NAVBAR ░░ -->
-  <header id="navbar">
-    <div class="nav-inner">
-      <a href="#inicio" class="logo-wrap">
-        <img src="img/logo.jpg" alt="JyJ Hidroponía Logo" class="header-logo">
-        <div class="logo-text">
-          <span class="logo-main">JyJ Hidroponía</span>
-          <span class="logo-sub">Agricultura del Futuro</span>
+    <header class="header">
+    <div class="container nav-container">
+        <a href="#" class="logo">
+            <img src="img/logo.jpeg" alt="Logo Ganando" class="logo-img">
+            <span class="logo-text">Ganando</span>
+        </a>
+        <div class="header-actions">
+            <button class="cart-btn" id="cart-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-      </a>
-      <nav>
+    </div>
+    <nav class="nav-menu" id="nav-menu">
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#ventajas">Ventajas</a></li>
-          <li><a href="#faq">FAQ</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#ofertas">Ofertas</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
+    </nav>
+    </header>
+
+    <section id="inicio" class="hero-banner">
+    <img src="img/banner.png" alt="Ganando - Ropa con actitud" class="hero-img">
+    <div class="hero-overlay">
+        <h1>Pensá como ganador, vestí como ganador</h1>
     </div>
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobile-menu">
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#oferta">Productos</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#ventajas">Ventajas</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
+    </section>
+
+    <section id="ofertas" class="offers section-padding">
+        <div class="container">
+            <h2 class="section-title">🔥 Ofertas Especiales</h2>
+            <div class="offers-grid" id="offers-container"></div>
+        </div>
+    </section>
+
+    <section id="catalogo" class="products section-padding">
+        <div class="container">
+            <h2 class="section-title">Lo que se viene</h2>
+            
+            <div class="catalog-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Buscar productos...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="todos">Todos</button>
+                    <button class="filter-btn" data-filter="hombre">Hombre</button>
+                    <button class="filter-btn" data-filter="mujer">Mujer</button>
+                </div>
+            </div>
+
+            <div class="product-grid" id="product-container"></div>
+        </div>
+    </section>
+
+    <div class="product-modal" id="product-modal">
+        <div class="product-modal-content">
+            <div class="product-modal-header">
+                <h3 id="modal-title"></h3>
+                <button class="close-product-modal" id="close-product-modal">&times;</button>
+            </div>
+            <div class="product-modal-body">
+                <p class="product-modal-desc" id="modal-desc"></p>
+                <div class="items-list-modal" id="modal-items"></div>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <main>
-
-    <!-- ░░ HERO ░░ -->
-    <section id="inicio" class="hero">
-      <div class="hero-bg">
-        <div class="hero-orb orb-1"></div>
-        <div class="hero-orb orb-2"></div>
-        <div class="hero-orb orb-3"></div>
-        <div class="particles" id="particles"></div>
-      </div>
-      <div class="hero-content">
-        <div class="hero-badge reveal">
-          <span class="badge-dot"></span>
-          Tecnología para potenciar tu cultivo · Envíos a todo el país
+    <div class="product-modal" id="combo-modal">
+        <div class="product-modal-content">
+            <div class="product-modal-header">
+                <h3 id="combo-modal-title"></h3>
+                <button class="close-combo-modal" id="close-combo-modal">&times;</button>
+            </div>
+            <div class="product-modal-body">
+                <p class="product-modal-desc" id="combo-modal-desc"></p>
+                <div id="combo-items-area"></div>
+                <div id="combo-summary-area"></div>
+            </div>
         </div>
-        <h1 class="hero-title reveal">
-          Tu huerto.<br>
-          <em>Tu independencia.</em><br>
-          Tu futuro.
-        </h1>
-        <p class="hero-desc reveal">
-          Cultivá alimentos frescos en casa sin tierra, sin pesticidas y con hasta <strong>90% menos agua</strong>. Sistemas modulares fabricados con precisión 3D, diseñados para que cualquier rincón de tu hogar florezca.
-        </p>
-        <div class="hero-actions reveal">
-          <a href="#oferta" class="btn btn-primary">Ver Ofertas <span class="arrow">→</span></a>
-          <a href="#productos" class="btn btn-ghost">Cómo funciona</a>
-        </div>
-        <div class="hero-stats reveal">
-          <div class="stat">
-            <span class="stat-num" data-target="90">0</span><span>%</span>
-            <span class="stat-label">menos agua</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-num" data-target="3">0</span><span>x</span>
-            <span class="stat-label">más rápido</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-num" data-target="365">0</span>
-            <span class="stat-label">días al año</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-visual reveal">
-        <div class="hero-card">
-          <div class="hero-card-glow"></div>
-          <img src="img/torre.png" alt="Torre hidropónica JyJ" class="hero-img">
-          <div class="hero-card-tag">
-            <span class="pulse-dot"></span>
-            Sistema activo
-          </div>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-        <span>Explorá</span>
-      </div>
-    </section>
-
-    <!-- ░░ STORYTELLING: EL PROBLEMA ░░ -->
-    <section id="problema" class="story-section story-problema">
-      <div class="container">
-        <div class="story-grid">
-          <div class="story-text reveal">
-            <span class="story-tag">El problema</span>
-            <h2>¿Sabés de dónde vienen realmente tus alimentos?</h2>
-            <p>Kilómetros de transporte, semanas de almacenamiento, pesticidas acumulados y un costo que crece cada mes. La agricultura industrial nos alejó de algo fundamental: <strong>saber qué comemos y de dónde viene.</strong></p>
-            <p>Pero hay una forma mejor.</p>
-          </div>
-          <div class="story-icons reveal">
-            <div class="problem-item">
-              <div class="problem-icon">🚛</div>
-              <p>Alimentos viajan +100 Km antes de llegar a tu mesa</p>
-            </div>
-            <div class="problem-item">
-              <div class="problem-icon">🧪</div>
-              <p>Cargados de pesticidas y conservantes químicos</p>
-            </div>
-            <div class="problem-item">
-              <div class="problem-icon">📈</div>
-              <p>Los precios siguen subiendo sin parar</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ░░ STORYTELLING: LA SOLUCIÓN ░░ -->
-    <section id="solucion" class="story-section story-solucion">
-      <div class="container">
-        <div class="story-grid reverse">
-          <div class="story-visual reveal">
-            <div class="solution-visual">
-              <div class="sol-ring sol-ring-1"></div>
-              <div class="sol-ring sol-ring-2"></div>
-              <div class="sol-ring sol-ring-3"></div>
-              <div class="sol-center">
-                <span>🌿</span>
-              </div>
-            </div>
-          </div>
-          <div class="story-text reveal">
-            <span class="story-tag">La solución</span>
-            <h2>Tu propio huerto, sin esfuerzo, sin tierra, sin excusas.</h2>
-            <p>Las torres hidropónicas de JyJ son sistemas automáticos que nutren tus plantas con agua enriquecida, circulación inteligente y el mínimo cuidado de tu parte.</p>
-            <ul class="solution-list">
-              <li><span class="check">✓</span> Fácil de armar y mantener</li>
-              <li><span class="check">✓</span> Sin experiencia previa necesaria</li>
-              <li><span class="check">✓</span> Cosecha sin ensuciarte</li>
-              <li><span class="check">✓</span> Funciona en balcones, cocinas, patios</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-        <!-- ░░ OFERTA ░░ -->
-    <section id="oferta" class="oferta-section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">Nuestros Sistemas</span>
-          <h2>Elegí tu sistema y empezá hoy</h2>
-          <p class="section-sub">Tecnología hidropónica diseñada para producir todo el año. <br>Precio exclusivo abonando por transferencia bancaria.</p>
-        </div>
-
-        <div class="oferta-grid">
-          <!-- Producto 1: 12 Plantas -->
-          <div class="oferta-card reveal">
-            <div class="card-badge">Ideal para empezar</div>
-            <div class="card-img-wrap">
-              <img src="img/12 plantas.png" alt="Sistema hidropónico JyJ 12 plantas">
-            </div>
-            <div class="card-body">
-              <h3>Sistema Completo <span class="highlight">12 Plantas</span></h3>
-              <p class="card-desc">Tu primer paso hacia la autonomía alimentaria. Perfecto para tener siempre a mano hierbas frescas, lechugas y verduras de hoja verde sin ocupar espacio.</p>
-              
-              <div class="card-price">
-                <p class="precio" id="precio1"></p>
-                <span class="precio-etiqueta">Precio por pago con transferencia</span>
-              </div>
-              
-              <div class="card-envio">🚚 Envío asegurado a todo el país</div>
-              <a href="https://wa.me/5493794884299?text=Hola!%20Quiero%20el%20sistema%20de%2012%20plantas%20(precio%20transferencia)." target="_blank" class="btn btn-card">Lo quiero →</a>
-            </div>
-          </div>
-
-          <!-- Producto 2: 24 Plantas (Destacado) -->
-          <div class="oferta-card oferta-card--featured reveal">
-            <div class="card-badge badge-gold">⭐ Más elegido</div>
-            <div class="card-img-wrap">
-              <img src="img/sistema completo.png" alt="Sistema hidropónico JyJ 24 plantas completo">
-            </div>
-            <div class="card-body">
-              <h3>Sistema Completo <span class="highlight">24 Plantas</span></h3>
-              <p class="card-desc">Producción seria para familias. Con este sistema lográs un rendimiento constante que complementa significativamente tu compra semanal de verduras frescas.</p>
-              
-              <div class="card-price">
-                <p class="precio" id="precio2"></p>
-                <span class="precio-etiqueta">Precio por pago con transferencia</span>
-              </div>
-              
-              <div class="card-envio">🚚 Envío asegurado a todo el país</div>
-              <a href="https://wa.me/5493794884299?text=Hola!%20Quiero%20el%20sistema%20completo%20de%2024%20plantas%20(precio%20transferencia)." target="_blank" class="btn btn-card">Lo quiero →</a>
-            </div>
-          </div>
-
-          <!-- Producto 3: Torre Vertical -->
-          <div class="oferta-card reveal">
-            <div class="card-badge badge-green">A TÚ MEDIDA</div>
-            <div class="card-img-wrap">
-              <img src="img/torre sola.png" alt="Torre hidropónica vertical JyJ 24 plantas">
-            </div>
-            <div class="card-body">
-              <h3>Torre Vertical <span class="highlight">24 Plantas</span></h3>
-              <p class="card-desc">Estructura vertical con 24 canastos incluidos. <strong>Solo torre y canastos</strong>, no incluye bomba ni demás componentes. Ideal para quienes ya tienen accesorios o buscan armar un sistema a medida en espacios reducidos.</p>              
-              <div class="card-price">
-                <p class="precio" id="precio3"></p>
-                <span class="precio-etiqueta">Precio por pago con transferencia</span>
-              </div>
-              
-              <div class="card-envio">🚚 Envío asegurado a todo el país</div>
-              <a href="https://wa.me/5493794884299?text=Hola!%20Quiero%20la%20Torre%20Vertical%20de%2024%20plantas%20(precio%20transferencia)." target="_blank" class="btn btn-card">Lo quiero →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ░░ PRODUCTOS / CÓMO FUNCIONA ░░ -->
-    <section id="productos" class="productos-section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">Nuestros Sistemas</span>
-          <h2>Tecnología que trabaja mientras vos descansás</h2>
-          <p class="section-sub">El Sistema Vertical Automático JyJ Modular gestiona solo la circulación de la solución nutritiva. Vos solo cosechás.</p>
-        </div>
-
-        <div class="product-showcase reveal">
-          <div class="product-img-wrap">
-            <img src="img/foto.jpg" alt="Sistema Vertical JyJ Modular">
-            <div class="product-badge-float">Impresión 3D</div>
-          </div>
-          <div class="product-features">
-            <div class="feature-step">
-              <div class="step-num">01</div>
-              <div class="step-content">
-                <h4>Ensamblado modular</h4>
-                <p>Piezas diseñadas para encajar perfectamente. Sin herramientas especiales, sin complicaciones.</p>
-              </div>
-            </div>
-            <div class="feature-step">
-              <div class="step-num">02</div>
-              <div class="step-content">
-                <h4>Circulación automática</h4>
-                <p>La bomba hace circular la solución nutritiva de forma continua, alimentando cada raíz.</p>
-              </div>
-            </div>
-            <div class="feature-step">
-              <div class="step-num">03</div>
-              <div class="step-content">
-                <h4>Crecimiento acelerado</h4>
-                <p>Las plantas reciben exactamente lo que necesitan, creciendo hasta 3 veces más rápido.</p>
-              </div>
-            </div>
-            <div class="feature-step">
-              <div class="step-num">04</div>
-              <div class="step-content">
-                <h4>Fácil de limpiar y escalar</h4>
-                <p>Módulos desmontables. Empezá chico y crecé a tu ritmo.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="video-wrap reveal">
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/HsGdKwYswRY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Sistema hidropónico JyJ en acción"></iframe>
-          </div>
-          <p class="video-caption">Mirá lo facíl que es →</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ░░ BENEFICIOS ░░ -->
-    <section id="ventajas" class="ventajas-section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">¿Por qué elegirnos?</span>
-          <h2>Todo lo que necesitás en un solo sistema</h2>
-        </div>
-        <div class="benefits-grid">
-          <div class="benefit-card reveal">
-            <div class="benefit-icon">💧</div>
-            <h3>90% menos agua</h3>
-            <p>Nuestros sistemas reutilizan el agua en ciclo cerrado. Cultivás más gastando mucho menos.</p>
-          </div>
-          <div class="benefit-card reveal">
-            <div class="benefit-icon">🏠</div>
-            <h3>Cualquier espacio</h3>
-            <p>Balcón, cocina, patio, interior. Si hay luz, hay lugar para un huerto JyJ.</p>
-          </div>
-          <div class="benefit-card reveal">
-            <div class="benefit-icon">🚫</div>
-            <h3>Sin pesticidas</h3>
-            <p>Controlás exactamente qué le das a tus plantas. Sin químicos, sin dudas.</p>
-          </div>
-          <div class="benefit-card reveal">
-            <div class="benefit-icon">📅</div>
-            <h3>Todo el año</h3>
-            <p>Sin estaciones, sin clima. Donde y cuando quieras.</p>
-          </div>
-          <div class="benefit-card reveal">
-            <div class="benefit-icon">🛠️</div>
-            <h3>Soporte personalizado</h3>
-            <p>Te acompañamos desde el primer día. Asesoramiento real, no un manual de PDF.</p>
-          </div>
-          <div class="benefit-card reveal">
-            <div class="benefit-icon">📦</div>
-            <h3>Envíos a todo el país</h3>
-            <p>Estés donde estés en Argentina, tu sistema llega hasta tu puerta.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ░░ NOSOTROS ░░ -->
-    <section id="nosotros" class="nosotros-section">
-      <div class="container">
-        <div class="nosotros-grid">
-          <div class="nosotros-text reveal">
-            <span class="section-tag">Quiénes somos</span>
-            <h2>Argentinos, apasionados por el cultivo inteligente</h2>
-            <p>JyJ Hidroponía nació en Misiones con una convicción: que cultivar tus propios alimentos no debería ser complicado ni caro. Combinamos formación en ciencias agrarias, tecnología de impresión 3D y años de investigación para crear sistemas que realmente funcionan.</p>
-            <p>Cada torre que fabricamos es un producto de diseño y precisión local, pensado para durar, crecer y transformar tu relación con la comida.</p>
-            <div class="nosotros-values">
-              <div class="value-pill">🌎 Sustentabilidad</div>
-              <div class="value-pill">🔬 Innovación</div>
-              <div class="value-pill">🤝 Comunidad</div>
-              <div class="value-pill">🏭 Producto local</div>
-            </div>
-          </div>
-          <div class="nosotros-mision reveal">
-            <div class="mision-card">
-              <div class="mision-icon">🎯</div>
-              <h4>Misión</h4>
-              <p>Facilitar el acceso a cultivo hidropónico accesible, sostenible y de bajo impacto ambiental para cada hogar argentino.</p>
-            </div>
-            <div class="mision-card">
-              <div class="mision-icon">🚀</div>
-              <h4>Visión</h4>
-              <p>Ser la empresa líder en hidroponía doméstica en Argentina, reconocidos por innovación y compromiso real con la sustentabilidad.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ░░ FAQ ░░ -->
-    <section id="faq" class="faq-section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">Preguntas frecuentes</span>
-          <h2>Todo lo que querés saber antes de empezar</h2>
-        </div>
-        <div class="faq-list">
-          <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false">
-              <span>¿Qué es la hidroponía y cómo funciona?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a">
-              <p>La hidroponía es el cultivo de plantas sin suelo. Las raíces se alimentan directamente de una solución nutritiva en agua, lo que permite un crecimiento más eficiente, más rápido y completamente controlado.</p>
-            </div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false">
-              <span>¿Qué plantas puedo cultivar?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a">
-              <p>Prácticamente cualquiera: lechugas, espinacas, albahaca, perejil, tomates cherry, fresas, flores ornamentales y mucho más. Algunos cultivos requieren sistemas específicos que también ofrecemos.</p>
-            </div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false">
-              <span>¿Es difícil de mantener?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a">
-              <p>No. Nuestros sistemas están diseñados para ser manejados por cualquier persona sin experiencia previa. Solo necesitás agua y nutrientes. Te acompañamos en todo el proceso de configuración.</p>
-            </div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false">
-              <span>¿Dónde hacen envíos?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a">
-              <p>A todo el territorio argentino. Consultanos por WhatsApp para coordinar el envío a tu localidad.</p>
-            </div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false">
-              <span>¿Qué tipo de asesoramiento recibo?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a">
-              <p>Asesoramiento personalizado por WhatsApp: configuración del sistema, selección de plantas, control de nutrientes, manejo de plagas y optimización del rendimiento.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ░░ CONTACTO ░░ -->
-    <section id="contacto" class="contacto-section">
-      <div class="container">
-        <div class="contacto-inner reveal">
-          <div class="contacto-text">
-            <h2>¿Listo para cultivar tu propio futuro?</h2>
-            <p>Contactanos y un especialista te ayuda a elegir el sistema perfecto para tu espacio.</p>
-            <div class="contacto-info">
-              <div class="contacto-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Posadas, Misiones, Argentina. C.P. 3300</span>
-              </div>
-              <div class="contacto-item">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:info@grupomisiones.com">info@grupomisiones.com</a>
-              </div>
-            </div>
-          </div>
-          <div class="contacto-ctas">
-            <a href="https://wa.me/5493794884299?text=¡Hola! Quiero obtener más información sobre hidroponía." target="_blank" class="btn btn-primary btn-lg">
-              <i class="fab fa-whatsapp"></i> Escribinos por WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ░░ FOOTER ░░ -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <img src="img/logo.jpg" alt="JyJ Hidroponía">
-        <span>JyJ Hidroponía</span>
-      </div>
-      <p class="footer-tagline">Acercándote a la agricultura del futuro.</p>
-      <div class="footer-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#productos">Productos</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#faq">FAQ</a>
-      </div>
-      <p class="footer-copy">© 2026 JyJ Hidroponía — Posadas, Misiones, Argentina</p>
     </div>
-  </footer>
 
-  <!-- ░░ WHATSAPP FLOTANTE ░░ -->
-  <a class="whatsapp-fab" href="https://wa.me/5493794884299?text=¡Hola! Quiero obtener más información sobre hidroponía." target="_blank" aria-label="Contactar por WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-    <span class="fab-tooltip">¡Consultanos!</span>
-  </a>
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header">
+            <h3>Tu Consulta</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-breakdown">
+                <div class="breakdown-row">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0</span>
+                </div>
+                <div class="breakdown-row">
+                    <span>Envío:</span>
+                    <span id="cart-shipping">$0</span>
+                </div>
+                <div class="breakdown-row cart-total-row">
+                    <span>Total estimado:</span>
+                    <span id="cart-total">$0</span>
+                </div>
+            </div>
+            <div class="shipping-info" id="shipping-msg">
+                <p><i class="fas fa-truck"></i> Envío: $3.000 | <strong>Gratis</strong> en Posadas y Garupá por compras superiores a $60.000</p>
+            </div>
+            <button class="btn-whatsapp-cart" id="send-whatsapp">
+                <i class="fab fa-whatsapp"></i> Consultar Disponibilidad
+            </button>
+        </div>
+    </div>
 
-  <script src="script.js"></script>
+    <footer id="contacto">
+    <div class="container footer-content">
+        <div class="footer-col">
+            <h3>Ganando</h3>
+            <p>Pensá como ganador, vestí como ganador.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Contacto</h3>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:info@grupomisiones.com" style="color: inherit; text-decoration: none;">info@grupomisiones.com</a></p>
+            <p><i class="fab fa-whatsapp"></i> +54 9 376 436 4659</p>
+            <p><i class="fas fa-map-marker-alt"></i> Posadas, Misiones</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2026 Ganando. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
