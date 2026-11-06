@@ -110,9 +110,9 @@ document.querySelectorAll(".faq-item").forEach(item => {
 });
 
 const preciosTransferencia = {
-  p1: 149900,
-  p2: 184900,
-  p3: 129900
+  p1: 179900,
+  p2: 224900,
+  p3: 144900
 };
 
 function formatearPrecio(num) {
