@@ -110,8 +110,8 @@ document.querySelectorAll(".faq-item").forEach(item => {
 });
 
 const preciosTransferencia = {
-  p1: 169900,
-  p2: 209900,
+  p1: 159900,
+  p2: 199900,
   p3: 129900
 };
 
