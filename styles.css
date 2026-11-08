@@ -161,6 +161,7 @@ nav ul li a.nav-cta:hover { background: var(--verde-mid); }
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 14px 28px;
   border-radius: var(--radius-pill);
@@ -201,9 +202,7 @@ nav ul li a.nav-cta:hover { background: var(--verde-mid); }
   background: var(--verde-deep);
   color: var(--blanco);
   width: 100%;
-  justify-content: center;
   border-radius: var(--radius-md);
-  margin-top: 16px;
 }
 .btn-card:hover { background: var(--verde-bright); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .btn-lg { padding: 17px 36px; font-size: 1.05rem; }
@@ -666,33 +665,92 @@ nav ul li a.nav-cta:hover { background: var(--verde-mid); }
   margin-bottom: 16px;
 }
 .oferta-card--featured .card-desc { color: var(--verde-pale); }
-.card-price { margin-bottom: 8px; }
-.precio {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--verde-deep);
-  font-family: var(--font-display);
+
+.card-prices {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: rgba(45, 125, 70, 0.05);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(45, 125, 70, 0.1);
 }
-.precio-etiqueta {
+.oferta-card--featured .card-prices {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.price-regular {
+  margin-bottom: 8px;
+}
+.price-label {
+  font-size: 0.75rem;
+  color: var(--text-light);
   display: block;
-  font-size: 0.78rem;
-  font-weight: 600;
+  margin-bottom: 2px;
+}
+.oferta-card--featured .price-label { color: var(--verde-pale); }
+.precio-mp {
+  font-size: 1rem;
+  color: var(--text-light);
+  text-decoration: line-through;
+  font-weight: 500;
+  margin: 0;
+}
+.price-discount {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.precio-transfer {
+  font-size: 1.6rem;
+  font-weight: 700;
   color: var(--verde-bright);
-  margin-top: 4px;
-  letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  margin: 0;
 }
-.oferta-card--featured .precio-etiqueta {
-  color: var(--dorado-light);
+.oferta-card--featured .precio-transfer { color: var(--dorado-light); }
+.discount-badge {
+  background: var(--verde-bright);
+  color: var(--blanco);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
 }
-.oferta-card--featured .precio { color: var(--blanco); }
+
 .card-envio {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--verde-bright);
-  margin-top: auto;
-  padding-top: 12px;
+  margin-bottom: 12px;
 }
 .oferta-card--featured .card-envio { color: var(--verde-pale); }
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+.btn-mp {
+  background: transparent;
+  color: var(--verde-deep);
+  border: 2px solid var(--verde-deep);
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+.btn-mp:hover {
+  background: var(--verde-deep);
+  color: var(--blanco);
+}
+.oferta-card--featured .btn-mp {
+  border-color: var(--blanco);
+  color: var(--blanco);
+}
+.oferta-card--featured .btn-mp:hover {
+  background: var(--blanco);
+  color: var(--verde-deep);
+}
 .oferta-card--featured .btn-card {
   background: var(--verde-bright);
 }
@@ -1151,6 +1209,7 @@ footer {
   .btn-primary:hover,
   .btn-ghost:hover,
   .btn-card:hover,
+  .btn-mp:hover,
   .oferta-card:hover,
   .benefit-card:hover {
     transform: none;

@@ -1,4 +1,59 @@
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+
 'use strict';
+
+const productos = {
+  p1: {
+    precioMP: 169900, 
+    precioTransfer: 154900, 
+    linkMP: "https://mpago.la/33tQ7Ns" 
+  },
+  p2: {
+    precioMP: 214900,
+    precioTransfer: 194900,
+    linkMP: "https://mpago.la/1jdUSvy"
+  },
+  p3: {
+    precioMP: 144900,
+    precioTransfer: 129900,
+    linkMP: "https://mpago.la/2kqVQ3f"
+  }
+};
+
+function formatearPrecio(num) {
+  if (num === 0) return "$ Consultar";
+  return "$" + num.toLocaleString("es-AR");
+}
+
+function aplicarPrecios() {
+  const p1mp = document.getElementById("precio-mp-1");
+  const p1trans = document.getElementById("precio-transfer-1");
+  const p1link = document.getElementById("link-mp-1");
+  
+  const p2mp = document.getElementById("precio-mp-2");
+  const p2trans = document.getElementById("precio-transfer-2");
+  const p2link = document.getElementById("link-mp-2");
+  
+  const p3mp = document.getElementById("precio-mp-3");
+  const p3trans = document.getElementById("precio-transfer-3");
+  const p3link = document.getElementById("link-mp-3");
+
+  if(p1mp) p1mp.textContent = formatearPrecio(productos.p1.precioMP);
+  if(p1trans) p1trans.textContent = formatearPrecio(productos.p1.precioTransfer);
+  if(p1link) p1link.href = productos.p1.linkMP;
+
+  if(p2mp) p2mp.textContent = formatearPrecio(productos.p2.precioMP);
+  if(p2trans) p2trans.textContent = formatearPrecio(productos.p2.precioTransfer);
+  if(p2link) p2link.href = productos.p2.linkMP;
+
+  if(p3mp) p3mp.textContent = formatearPrecio(productos.p3.precioMP);
+  if(p3trans) p3trans.textContent = formatearPrecio(productos.p3.precioTransfer);
+  if(p3link) p3link.href = productos.p3.linkMP;
+}
+
+aplicarPrecios();
 
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -107,30 +162,4 @@ document.querySelectorAll(".faq-item").forEach(item => {
       btn.click();
     }
   });
-});
-
-const preciosTransferencia = {
-  p1: 154900,
-  p2: 194900,
-  p3: 129900
-};
-
-function formatearPrecio(num) {
-  return "$" + num.toLocaleString("es-AR");
-}
-
-function aplicarPrecios() {
-  const p1El = document.getElementById("precio1");
-  const p2El = document.getElementById("precio2");
-  const p3El = document.getElementById("precio3");
-
-  if (p1El) p1El.textContent = formatearPrecio(preciosTransferencia.p1);
-  if (p2El) p2El.textContent = formatearPrecio(preciosTransferencia.p2);
-  if (p3El) p3El.textContent = formatearPrecio(preciosTransferencia.p3);
-}
-
-aplicarPrecios();
-
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
 });
