@@ -130,3 +130,7 @@ function aplicarPrecios() {
 }
 
 aplicarPrecios();
+
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
