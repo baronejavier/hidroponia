@@ -6,18 +6,18 @@ document.addEventListener('contextmenu', (e) => {
 
 const productos = {
   p1: {
-    precioMP: 169900, 
-    precioTransfer: 154900, 
+    precioMP: 179900, 
+    precioTransfer: 164900, 
     linkMP: "https://mpago.la/33tQ7Ns" 
   },
   p2: {
-    precioMP: 214900,
-    precioTransfer: 194900,
+    precioMP: 234900,
+    precioTransfer: 214900,
     linkMP: "https://mpago.la/1jdUSvy"
   },
   p3: {
-    precioMP: 144900,
-    precioTransfer: 129900,
+    precioMP: 159900,
+    precioTransfer: 144900,
     linkMP: "https://mpago.la/2kqVQ3f"
   }
 };
