@@ -1,9 +1,10 @@
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-});
-
 'use strict';
 
+// ============================================
+// CONFIGURACIÓN DE PRODUCTOS
+// Para cambiar precios o links, solo editá este objeto.
+// El HTML usa data-id="p1", "p2", "p3" para vincular automáticamente.
+// ============================================
 const productos = {
   p1: {
     precioMP: 179900, 
@@ -20,6 +21,8 @@ const productos = {
     precioTransfer: 144900,
     linkMP: "https://mpago.la/2kqVQ3f"
   }
+  // Para agregar un nuevo producto, solo sumá una nueva entrada:
+  // p4: { precioMP: 0, precioTransfer: 0, linkMP: "..." }
 };
 
 function formatearPrecio(num) {
@@ -28,55 +31,59 @@ function formatearPrecio(num) {
 }
 
 function aplicarPrecios() {
-  const p1mp = document.getElementById("precio-mp-1");
-  const p1trans = document.getElementById("precio-transfer-1");
-  const p1link = document.getElementById("link-mp-1");
-  
-  const p2mp = document.getElementById("precio-mp-2");
-  const p2trans = document.getElementById("precio-transfer-2");
-  const p2link = document.getElementById("link-mp-2");
-  
-  const p3mp = document.getElementById("precio-mp-3");
-  const p3trans = document.getElementById("precio-transfer-3");
-  const p3link = document.getElementById("link-mp-3");
+  // Busca todas las tarjetas con data-id y aplica precio/link dinámicamente
+  document.querySelectorAll('.oferta-card[data-id]').forEach(card => {
+    const id = card.dataset.id;
+    const producto = productos[id];
+    if (!producto) return;
 
-  if(p1mp) p1mp.textContent = formatearPrecio(productos.p1.precioMP);
-  if(p1trans) p1trans.textContent = formatearPrecio(productos.p1.precioTransfer);
-  if(p1link) p1link.href = productos.p1.linkMP;
+    const elMP = card.querySelector('[data-role="mp"]');
+    const elTrans = card.querySelector('[data-role="transfer"]');
+    const elLink = card.querySelector('[data-role="link-mp"]');
 
-  if(p2mp) p2mp.textContent = formatearPrecio(productos.p2.precioMP);
-  if(p2trans) p2trans.textContent = formatearPrecio(productos.p2.precioTransfer);
-  if(p2link) p2link.href = productos.p2.linkMP;
-
-  if(p3mp) p3mp.textContent = formatearPrecio(productos.p3.precioMP);
-  if(p3trans) p3trans.textContent = formatearPrecio(productos.p3.precioTransfer);
-  if(p3link) p3link.href = productos.p3.linkMP;
+    if (elMP) elMP.textContent = formatearPrecio(producto.precioMP);
+    if (elTrans) elTrans.textContent = formatearPrecio(producto.precioTransfer);
+    if (elLink) elLink.href = producto.linkMP;
+  });
 }
 
 aplicarPrecios();
 
+// ============================================
+// MENÚ HAMBURGUESA
+// ============================================
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
 
-hamburger.addEventListener("click", () => {
-  const isOpen = mobileMenu.classList.toggle("open");
-  hamburger.classList.toggle("active");
-  hamburger.setAttribute("aria-expanded", isOpen);
-});
-
-document.querySelectorAll("#mobile-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.remove("open");
-    hamburger.classList.remove("active");
-    hamburger.setAttribute("aria-expanded", "false");
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    hamburger.classList.toggle("active");
+    hamburger.setAttribute("aria-expanded", isOpen);
   });
-});
 
+  document.querySelectorAll("#mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+// ============================================
+// NAVBAR SCROLL
+// ============================================
 const navbar = document.getElementById("navbar");
-window.addEventListener("scroll", () => {
-  navbar.classList.toggle("scrolled", window.scrollY > 50);
-}, { passive: true });
+if (navbar) {
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  }, { passive: true });
+}
 
+// ============================================
+// REVEAL ON SCROLL
+// ============================================
 const revealElements = document.querySelectorAll(".reveal");
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
@@ -89,6 +96,9 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
+// ============================================
+// CONTADORES ANIMADOS (respeta prefers-reduced-motion)
+// ============================================
 const prefiereMovimientoReducido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const counters = document.querySelectorAll(".stat-num");
 let countersActivados = false;
@@ -125,6 +135,9 @@ if (!prefiereMovimientoReducido && counters.length > 0) {
   });
 }
 
+// ============================================
+// PARTÍCULAS DEL HERO
+// ============================================
 const particlesContainer = document.getElementById("particles");
 if (particlesContainer && !prefiereMovimientoReducido) {
   const fragment = document.createDocumentFragment();
@@ -139,15 +152,19 @@ if (particlesContainer && !prefiereMovimientoReducido) {
   particlesContainer.appendChild(fragment);
 }
 
-document.querySelectorAll(".faq-item").forEach(item => {
-  const btn = item.querySelector(".faq-q");
+// ============================================
+// ACORDEÓN DE PREGUNTAS FRECUENTES
+// ============================================
+document.querySelectorAll(".pregunta-item").forEach(item => {
+  const btn = item.querySelector(".pregunta-q");
+  if (!btn) return;
 
   btn.addEventListener("click", () => {
     const estaAbierto = item.classList.contains("open");
     
-    document.querySelectorAll(".faq-item").forEach(i => {
+    document.querySelectorAll(".pregunta-item").forEach(i => {
       i.classList.remove("open");
-      i.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+      i.querySelector(".pregunta-q")?.setAttribute("aria-expanded", "false");
     });
 
     if (!estaAbierto) {
