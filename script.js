@@ -1,10 +1,5 @@
 'use strict';
 
-// ============================================
-// CONFIGURACIÓN DE PRODUCTOS
-// Para cambiar precios o links, solo editá este objeto.
-// El HTML usa data-id="p1", "p2", "p3" para vincular automáticamente.
-// ============================================
 const productos = {
   p1: {
     precioMP: 169900, 
