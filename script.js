@@ -2,17 +2,17 @@
 
 const productos = {
   p1: {
-    precioMP: 169900, 
+    precioMP: 189900, 
     precioTransfer: 154900, 
     linkMP: "https://mpago.la/33tQ7Ns" 
   },
   p2: {
-    precioMP: 214900,
+    precioMP: 234900,
     precioTransfer: 194900,
     linkMP: "https://mpago.la/1jdUSvy"
   },
   p3: {
-    precioMP: 144900,
+    precioMP: 159900,
     precioTransfer: 129900,
     linkMP: "https://mpago.la/2kqVQ3f"
   }
